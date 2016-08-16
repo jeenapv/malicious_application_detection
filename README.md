@@ -1,0 +1,2 @@
+# malicious_application_detection
+Detecting Malicious Facebook Applications
