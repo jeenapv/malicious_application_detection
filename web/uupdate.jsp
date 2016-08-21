@@ -1,11 +1,12 @@
 
-<%@ page import="java.sql.*,databaseconnection.*"%>
+<%@ page import="java.sql.*"%>
+<%@include file="db.jsp" %>
 <%
 		
 		int count=0;	
 		int like;
 		
-Connection con=null;
+
 ResultSet rs=null;
 PreparedStatement ps=null;
 Statement st=null;
@@ -13,8 +14,7 @@ Statement st=null;
 ResultSet rs1=null;
 PreparedStatement ps1=null;
 Statement st1=null;
-String name=null, id=null,ccity=null,ccountry=null;
-
+String name=null, id=null;
 String uuid=(String)session.getAttribute("uuid");
 String a=(String)session.getAttribute("a");
 
@@ -28,10 +28,9 @@ System.out.println(b);
 
 try
 {
-con=databasecon.getconnection();
- st=con.createStatement();   
+ 
  String sqll="select count from friends where log='"+a+"' ";
- rs=st.executeQuery(sqll);
+ rs=stmt.executeQuery(sqll);
 if(rs.next()){
 	//a=rs.getString(1);
 	//sendid=rs.getString("sendid");
@@ -42,9 +41,9 @@ like=rs.getInt("count")+1;
 
 
 try{
-	Connection con1 = databasecon.getconnection();
+	
 
-  ps1=con1.prepareStatement("Update friends set count=? where log='"+a+"' ");
+  ps1=con.prepareStatement("Update friends set count=? where log='"+a+"' ");
 			ps1.setInt(1,like);	
 			ps1.executeUpdate();
 

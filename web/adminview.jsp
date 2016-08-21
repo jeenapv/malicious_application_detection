@@ -5,6 +5,7 @@
         <title>FlashTemplatesDesign.com free CSS template</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
+         <link rel="stylesheet" href="lib/bootstrap.min.css">
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
 		
 		
@@ -28,14 +29,9 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        
-                        <li><a href="index.html">Back</a></li>
-                      
-                    </ul>
-                </div>
+            
+                     <%@include  file="navigation_bar.html" %>
+                
                 
     <div id="header"> </div>
     <div id="index_content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -62,13 +58,7 @@
                   attack</strong></font></a></td>
               </tr>
 	<tr>
-                <td align="center">
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;<img src="images/hand1.gif"> </p>
-				 <a href="chart1.jsp">
-				<font color="#FFCC00" size="4"><strong>View post malacious 
-                  attack in facebook</strong></font></a></td>
-              </tr>
+               
 	
 	</table>
 	

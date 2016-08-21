@@ -1,6 +1,7 @@
-﻿<%@ page import="java.sql.*,databaseconnection.*"%>
+﻿<%@ page import="java.sql.*"%>
 
 <%@ page import="java.io.*"%>
+<%@include file="db.jsp" %>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 
 
@@ -114,13 +115,9 @@ String id=request.getQueryString();
 //String b1=(String)session.getAttribute("b");
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
 
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","admin");
 
-PreparedStatement stmt = con.prepareStatement("select name,email,mobile,log1,id from login where id='"+id+"' AND log='"+a+"'");
-
-ResultSet rs = stmt.executeQuery();
+ResultSet rs = stmt.executeQuery("select name,email,mobile,log1,id from login where id='"+id+"' AND log='"+a+"'");
 
 while(rs.next()) {
 String name=rs.getString(1);

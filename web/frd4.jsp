@@ -1,5 +1,6 @@
-<%@ page import="java.sql.*,databaseconnection.*"%>
+<%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
+<%@include file="db.jsp" %>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 <%
 String a11=(String)session.getAttribute("name");
@@ -15,7 +16,7 @@ try {
 
 Class.forName("com.mysql.jdbc.Driver");
 
-Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","admin");
+Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
 
 PreparedStatement stmt1 = con1.prepareStatement("select name from login where id='"+a11+"' AND log='"+a+"'");
 
@@ -37,7 +38,7 @@ try {
 
 Class.forName("com.mysql.jdbc.Driver");
 
-Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","admin");
+Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
 
 PreparedStatement stmt2 = con2.prepareStatement("select name from login where id='"+pid+"' AND log='"+a+"'");
 
@@ -74,7 +75,7 @@ String hh="facebook";
 	try
 	{
 		
-		Connection con = databasecon.getconnection();
+		
 
 		ps = con.prepareStatement("insert into friends(sendid,sendid1,recid,recid1,status,log) values(?,?,?,?,'"+a1+"','"+a+"')");
 		ps.setString(1,a11);
@@ -103,9 +104,9 @@ PreparedStatement ps4 = null;
 	try
 	{
 		
-		Connection con4 = databasecon.getconnection();
+		
 
-		ps4 = con4.prepareStatement("update friends set status='"+h+"'  where sendid='"+pid+"'AND recid='"+a4+"' AND log='"+a+"'");
+		ps4 = con.prepareStatement("update friends set status='"+h+"'  where sendid='"+pid+"'AND recid='"+a4+"' AND log='"+a+"'");
 	
 ps4.executeUpdate();
 

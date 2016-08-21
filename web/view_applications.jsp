@@ -1,4 +1,7 @@
-﻿<%@ page import="java.sql.*"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.io.*"%>
+<%@include file="db.jsp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -6,6 +9,8 @@
         <title>FlashTemplatesDesign.com free CSS template</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
+
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
 		
 		
@@ -14,11 +19,10 @@
 		<script type="text/javascript" src="lib/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="lib/jquery.tools.js"></script>
     	<script type="text/javascript" src="lib/jquery.custom.js"></script>
-<script language="javascript" type="text/javascript" src="datetimepicker.js">
-
-</script>
+<script language="javascript" type="text/javascript" src="datetimepicker.js"></script>
 
 		<style>
+
 		.CSSTableGenerator {
 	margin:0px;padding:0px;
 	width:100%;
@@ -106,13 +110,7 @@
 	font-weight:bold;
 	color:#000000;
 }
-.CSSTableGenerator tr:first-child:hover td{
-	background:-o-linear-gradient(bottom, #ea0b77 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ea0b77), color-stop(1, #ffffff) );
-	background:-moz-linear-gradient( center top, #ea0b77 5%, #ffffff 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea0b77", endColorstr="#ffffff");	background: -o-linear-gradient(top,#ea0b77,ffffff);
 
-	background-color:#ea0b77;
-}
 .CSSTableGenerator tr:first-child td:first-child{
 	border-width:0px 0px 1px 0px;
 }
@@ -131,7 +129,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <%@include  file="navigation_bar.html" %>
+                 <%@include  file="navigation_bar.html" %>
                 <div id="header">
                     
 					
@@ -139,8 +137,119 @@
 
                 
     <div id="index_content"> 
-	<p align="center">
-<img src="images/logotype2.jpg"></p>
+	
+	<div >
+      <table  class="table" align="center">
+     <thead>
+        <tr>
+          <td   >App Id</td>
+          <td width="">App Name</td>
+          <td width="">Description</td>
+          <td width="">Categories</td>
+          <td width="">Companies</td>
+		   <td width="">Permissions </td>
+		   <td width="">Rating</td>
+		   <td width="">User Count</td>
+		   <td width="">App review</td>
+		   <td width="">Intenal links</td>
+		   <td width="">External links</td>
+
+
+        </tr>
+        <thead>
+        <%
+		
+		
+		
+
+		
+
+ResultSet rs=null;
+
+
+
+
+try
+{
+    
+ String sqll="select * from applications ";
+ rs=stmt.executeQuery(sqll);
+ while(rs.next()){
+	  
+	
+	String app_id=rs.getString("app_id");
+	String app_name=rs.getString("app_name");
+	String app_description=rs.getString("app_description");
+	String categories=rs.getString("categories");
+	String company=rs.getString("company");
+	String permissions=rs.getString("permissions");
+	String rating=rs.getString("rating");
+	String user_count=rs.getString("users_count");
+	String app_review=rs.getString("app_review");
+	String internal_links=rs.getString("internal_links");
+	String external_links=rs.getString("external_links");
+
+
+	
+
+	
+	%>
+        <tr> 
+          <td id="<%=app_id%>">
+            <%=app_id%>
+          </td>
+          <td >
+            <%=app_name%>
+          </td>
+          <td >
+            <%=app_description%>
+          </td>
+          <td >
+            <%=categories%>
+          </td>
+		  <td >
+            <%=company%>
+          </td>
+          <td >
+            <%=permissions%>
+          </td>
+          <td >
+            <%=rating%>
+          </td><td >
+            <%=user_count%>
+          </td><td >
+            <%=app_review%>
+          </td><td >
+            <%=internal_links%>
+          </td>
+          <td >
+            <%=external_links%>
+          </td>
+          <td >
+            <a href="remove_application.jsp?appid=<%=app_id%>">remove</a>
+          </td>
+          
+      
+        </tr>
+        <% 
+
+}
+
+
+}
+
+catch(Exception e2)
+{
+out.print(e2);
+}
+
+
+
+
+
+%>
+      </table>
+      </div>
       <div style="clear: both"></div>
               </div>
 

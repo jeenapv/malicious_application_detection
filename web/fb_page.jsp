@@ -11,6 +11,7 @@
         <title>FlashTemplatesDesign.com free CSS template</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
 		
 		
@@ -57,14 +58,18 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="index.html">back</a></li>
-                        
-                    </ul>
+                <nav class="navbar navbar-inverse">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <a class="navbar-brand" href="#">Facebook</a>
+                    </div>
+                  <ul class="nav navbar-nav">
+                  <li class="active"><a href="fb_page.jsp">Home</a></li>
+                  <li><a href="registration.jsp">Register</a></li>
+                  
+                  </ul>
                 </div>
+               </nav>
                 <div id="header">
                     
 					

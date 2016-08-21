@@ -1,4 +1,7 @@
-﻿<%@ page import="java.sql.*,databaseconnection.*"%>
+﻿<%@ page import="java.sql.*"%>
+<%@ page import="java.io.*"%>
+<%@include file="db.jsp" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -6,6 +9,8 @@
         <title>FlashTemplatesDesign.com free CSS template</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
+
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
 		
 		
@@ -131,14 +136,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                      
-                        <li><a href="adminview.jsp">Back</a></li>
-                      
-                    </ul>
-                </div>
+                 <%@include  file="navigation_bar.html" %>
                 <div id="header">
                     
 					
@@ -150,7 +148,7 @@
 	<div class="CSSTableGenerator">
       <table width="655" height="204" align="center"  >
         <tr> 
-          <td height="39" colspan="6" align="center" >User   Details</td>
+          <td height="39" colspan="9" align="center" >User   Details</td>
 		
         </tr>
         <tr   > 
@@ -160,6 +158,8 @@
           <td width="228">Password </td>
           <td width="228">Mobile </td>
 		   <td width="228">Birthday </td>
+		   <td width="228">Status</td>
+
         </tr>
         <%
 		
@@ -167,10 +167,10 @@
 		
 
 		
-Connection con=null;
+
 ResultSet rs=null;
 PreparedStatement ps=null;
-Statement st=null;
+
 
 
 String uid=null,name=null,age=null,zip=null,disease=null,msg1=null,md=null,file=null,file1=null ;
@@ -178,11 +178,10 @@ String uid=null,name=null,age=null,zip=null,disease=null,msg1=null,md=null,file=
 String location=request.getParameter("search");
 try
 {
-con=databasecon.getconnection();
- st=con.createStatement();   
- String sqll="select id,name,email,password,mobile,birthday from login ";
- rs=st.executeQuery(sqll);
-while(rs.next()){
+    
+ String sqll="select id,name,email,password,mobile,birthday,blocked_status from login ";
+ rs=stmt.executeQuery(sqll);
+ while(rs.next()){
 	uid=rs.getString("id");
 	name=rs.getString("name"); 
 	
@@ -190,13 +189,20 @@ while(rs.next()){
 	String password=rs.getString("password");
 	String mobile=rs.getString("mobile");
 	String birthday=rs.getString("birthday");
-	
-	
-	
+	int status=rs.getInt("blocked_status");
+	String status1 = "";
+	String status_link = "";
 
-%>
+	if(status == 0){
+		 status1 = "Active";
+		 status_link = "Block";
+	}else{
+		 status1 = "Blocked";
+		 status_link = "Active";
+	}
+	%>
         <tr> 
-          <td >
+          <td id="<%=uid%>">
             <%=uid%>
           </td>
           <td >
@@ -210,8 +216,12 @@ while(rs.next()){
           </td>
 		  <td >
             <%=mobile%>
-          </td><td >
+          </td>
+          <td >
             <%=birthday%>
+          </td>
+          <td >
+            <%=status1%><a class="btn btn-primary" href="block_user.jsp?uid=<%=uid%>&status=<%=status%>">&nbsp; <%=status_link%></a>
           </td>
       
         </tr>
