@@ -128,11 +128,7 @@ String b1=(String)session.getAttribute("b");
 String id=null;
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
-
-Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-
-PreparedStatement stmt2 = con2.prepareStatement("select id from login where email='"+b1+"' AND log='"+a+"'");
+PreparedStatement stmt2 = con.prepareStatement("select id from login where email='"+b1+"' AND log='"+a+"'");
 
 ResultSet rs2 = stmt2.executeQuery();
 

@@ -124,11 +124,7 @@ String a=(String)session.getAttribute("a");
 String m=null,n=null,o=null,p=null,q=null,r=null,s=null,t=null;
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
-
-Connection con5 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-
-PreparedStatement stmt5 = con5.prepareStatement("select name,msg,id1,id from photo where log='"+a+"'");
+PreparedStatement stmt5 = con.prepareStatement("select name,msg,id1,id from photo where log='"+a+"'");
 
 ResultSet rs5 = stmt5.executeQuery();
 
@@ -169,11 +165,7 @@ out.println(e3.getMessage());
 
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
-
-Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-
-PreparedStatement stmt1 = con1.prepareStatement("select name,msg,id1 from message where log='"+a+"'");
+PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1 from message where log='"+a+"'");
 
 ResultSet rs1 = stmt1.executeQuery();
 
@@ -204,11 +196,7 @@ out.println(e3.getMessage());
 
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
-
-Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-
-PreparedStatement stmt1 = con1.prepareStatement("select name,msg,id1,video from videos where log='"+a+"'");
+PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1,video from videos where log='"+a+"'");
 
 ResultSet rs1 = stmt1.executeQuery();
 

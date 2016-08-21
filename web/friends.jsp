@@ -121,12 +121,8 @@ String q=null;
 String a=(String)session.getAttribute("a");
 
 try {
-
-Class.forName("com.mysql.jdbc.Driver");
-
-Connection con3 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-
-PreparedStatement stmt3 = con3.prepareStatement("select id from login where email='"+b+"' AND log='"+a+"'");
+    
+PreparedStatement stmt3 = con.prepareStatement("select id from login where email='"+b+"' AND log='"+a+"'");
 
 ResultSet rs3= stmt3.executeQuery();
 
@@ -147,10 +143,7 @@ String s=null,s1=null;
 
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
-
-Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-PreparedStatement stmt1 = con1.prepareStatement("select recid,recid1 from friends where sendid='"+q+"' AND log='"+a+"'");
+PreparedStatement stmt1 = con.prepareStatement("select recid,recid1 from friends where sendid='"+q+"' AND log='"+a+"'");
 
 ResultSet rs1= stmt1.executeQuery();
 
