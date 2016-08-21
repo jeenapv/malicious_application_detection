@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
 <%@page import="com.oreilly.servlet.*,java.sql.*,java.lang.*,databaseconnection.*,java.text.SimpleDateFormat,java.util.*,java.io.*,javax.servlet.*, javax.servlet.http.*"%>
 <%@page import=" java.security.MessageDigest"%>
 <%@page import=" java.security.*"%>
@@ -28,7 +28,7 @@ String ss=(String)session.getAttribute("emailid");
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>FlashTemplatesDesign.com free CSS template</title>
+        <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />

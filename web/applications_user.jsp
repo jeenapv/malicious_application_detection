@@ -129,7 +129,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                 <%@include  file="navigation_bar.html" %>
+                 <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -146,13 +146,9 @@
           <td width="">App Name</td>
           <td width="">Description</td>
           <td width="">Categories</td>
-          <td width="">Company name</td>
-		   <td width="">Permissions </td>
+          
 		   <td width="">Rating</td>
-		   <td width="">User Count</td>
-		   <td width="">App review</td>
-		   <td width="">Intenal links</td>
-		   <td width="">External links</td>
+		  
 
 
         </tr>
@@ -207,26 +203,12 @@ try
           <td >
             <%=categories%>
           </td>
-		  <td >
-            <%=company%>
-          </td>
-          <td >
-            <%=permissions%>
-          </td>
+		 
           <td >
             <%=rating%>
-          </td><td >
-            <%=user_count%>
-          </td><td >
-            <%=app_review%>
-          </td><td >
-            <%=internal_links%>
           </td>
           <td >
-            <%=external_links%>
-          </td>
-          <td >
-            <a href="remove_application.jsp?appid=<%=app_id%>">remove</a>
+            <a href="share_application.jsp?appid=<%=app_id%>"> Share </a>
           </td>
           
       

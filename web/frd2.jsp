@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>FlashTemplatesDesign.com free CSS template</title>
+        <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
@@ -123,6 +123,8 @@ String b=(String)session.getAttribute("b");
 <%
 String a=(String)session.getAttribute("a");
 String b1=(String)session.getAttribute("b");
+
+
 String id=null;
 try {
 

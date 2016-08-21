@@ -5,7 +5,7 @@
 
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>FlashTemplatesDesign.com free CSS template</title>
+        <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="lib/bootstrap.min.css">

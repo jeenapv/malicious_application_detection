@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>FlashTemplatesDesign.com free CSS template</title>
+        <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="lib/bootstrap.min.css">
@@ -58,18 +58,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <nav class="navbar navbar-inverse">
-                  <div class="container-fluid">
-                    <div class="navbar-header">
-                      <a class="navbar-brand" href="#">Facebook</a>
-                    </div>
-                  <ul class="nav navbar-nav">
-                  <li class="active"><a href="fb_page.jsp">Home</a></li>
-                  <li><a href="registration.jsp">Register</a></li>
-                  
-                  </ul>
-                </div>
-               </nav>
+                <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -102,27 +91,24 @@
             &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends Request</b></font></a> 
           </h3>
             <h3><br>
-              <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></h3>
+              <font color="#CC3366">&nbsp;&nbsp;<b></b></font></h3>
             <h3><br>
-              &nbsp; &nbsp;<a href="ga.jsp"><font color="#009933"><b><font size="2">My 
-              Gallery</font></b></font></a></h3>
+              &nbsp; &nbsp;<a href="ga.jsp"><font color="#009933"><b><font size="2"></font></b></font></a></h3>
             <h3><br>
-              &nbsp;&nbsp;<a href="post_code_emailsend.jsp"><font color="#009933"><b><font size="2">Add 
-              Messages</font></b></font></a></h3>
+              &nbsp;&nbsp;<a href="post_code_emailsend.jsp"><font color="#009933"><b><font size="2"></font></b></font></a></h3>
             <h3><br>
-              &nbsp;&nbsp;<a href="post_code_emailsend1.jsp"><font color="#009933"><b><font size="2">Add 
-              Photos</font></b></font></a></h3>
+              &nbsp;&nbsp;<a href="post_code_emailsend1.jsp"><font color="#009933"><b><font size="2"></font></b></font></a></h3>
             <h3><br>
               &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
-              LOGOUT</strong></font></a> </h3></td>
+              </strong></font></a> </h3></td>
  <td width="629"><table><tr><td>
  <p>&nbsp;</p>
-                <p><a href="post_code_emailsend.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Add_  Messages</font></a>
+                <p><a href="post_code_emailsend.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				   <a href="post_code_emailsend1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Add_Photos</font></a>  
+				   <a href="post_code_emailsend1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>  
 				   
 				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				   <a href="graph1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Status</font></a>  
+				   <a href="graph1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>  
 				   
 				   
 				   

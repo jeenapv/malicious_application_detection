@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>FlashTemplatesDesign.com free CSS template</title>
+        <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
          <link rel="stylesheet" href="lib/bootstrap.min.css">
@@ -40,27 +40,10 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Admin 
             view Page</font></strong></font></td>
         </tr>
-	<tr><td><img src="images/admin1.jpg"></td>
+	<tr><td><img width="269%" src="images/fb123.png"></td>
 	<td width="315">
 	
-	<table width="347" height="112"><tr>
-                <td align="center">
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;<img src="images/hand1.gif"> </p>
-                  <p> <a href="view.jsp"><font color="#00FF66" size="4"><strong>
-				 view Users Details</strong></font></a></p></td>
-              </tr>
-	<tr>
-                <td align="center">
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;<img src="images/hand1.gif"> </p> <a href="chart.jsp">
-				<font color="#FF0099" size="4"><strong>View facebook malacious 
-                  attack</strong></font></a></td>
-              </tr>
-	<tr>
-               
-	
-	</table>
+
 	
 	
 	

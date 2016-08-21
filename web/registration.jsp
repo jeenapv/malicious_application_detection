@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>FlashTemplatesDesign.com free CSS template</title>
+        <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="lib/bootstrap.min.css">
@@ -23,7 +23,7 @@
     <body>
         <div id="wrap">
             <div id="logo">
-                <font size="6"    color="#000000"><b>Detecting Malicious Facebook Applications</b></font></h1>
+                <font size="6"    color=""><b>Detecting Malicious Facebook Applications</b></font></h1>
               
             </div>
 
@@ -35,7 +35,7 @@
                       <a class="navbar-brand" href="#">Facebook</a>
                     </div>
                   <ul class="nav navbar-nav">
-                  <li ><a href="login.jsp">Home</a></li>
+                  <li ><a href="login.jsp">Login</a></li>
                   <li class="active"><a href="registration.jsp">Register</a></li>
                   
                   </ul>
@@ -68,7 +68,7 @@
     <td width="506"> 
 
      
-	<form name="s" action="register1.jsp" method="get" onSubmit="return valid()">
+	<form name="s" action="register1.jsp" method="get" onSubmit="">
               <table   bgcolor="#9999FF" width="516" height="299">
                 <tr></tr>
                 <tr> 
@@ -76,21 +76,21 @@
                     Up</font></b></font></td>
                 </tr>
                 <tr> 
-                  <td width="73"><font face="Times New Roman"  size="+1" ><strong><font color="#000000">Name</font></strong></font></td>
-                  <td width="145">&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" placeholder="Enter your name?" /></td>
+                  <td width="73"><font face="Times New Roman"  size="+1" ><strong><font color="">Name</font></strong></font></td>
+                  <td width="145">&nbsp;&nbsp;&nbsp;&nbsp; <input class="form-control" type="text" name="name" placeholder="Enter your name?" required/></td>
                 </tr>
                 <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#000000"><strong>Your 
+                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>Your 
                     Email</strong></font></td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="email" placeholder="Enter your Email id?" /></td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input class="form-control" type="text" name="email" placeholder="Enter your Email id?" required/></td>
                 </tr>
 				
 				
 				
 				<tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#000000"><strong>Your Reference 
+                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>Your Reference 
                     Email</strong></font></td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="remail" placeholder="Enter your Email id?" /></td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="form-control" name="remail" placeholder="Enter your Email id?" required/></td>
                 </tr>
 				
 				
@@ -98,16 +98,16 @@
 				
 				
                 <tr> 
-                  <td><font face="Times New Roman"  size="+1" color="#000000"><strong>Password</strong></font></td>
+                  <td><font face="Times New Roman"  size="+1" color=""><strong>Password</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input type="password" name="password" placeholder="Enter your password?" />
+                    <input type="password" name="password" class="form-control" placeholder="Enter your password?" required/>
                   </td>
                 </tr>
                 <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#000000"><strong>Your 
+                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>Your 
                     Domain</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <select name="log">
+                    <select class="form-control" name="log">
                       <option value="0">select Domain:</option>
                       <option value="Facebook">Facebook</option>
                       <option value="Admin">Admin</option>
@@ -115,36 +115,36 @@
                 </tr>
                 <tr> </tr>
                 <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#000000"><strong>Mobile</strong></font></td>
+                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>Mobile</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input type="text" name="mobile" placeholder="Enter your mobile numbers?" /></td>
+                    <input type="text" name="mobile" class="form-control" placeholder="Enter your mobile numbers?" required/></td>
                 </tr>
                 <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#000000"><strong>I 
+                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>I 
                     Am</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <select name="log1">
+                    <select class="form-control" name="log1" required>
                     
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select></td>
                 </tr>
                 <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#000000"><strong>Photo</strong></font></td>
+                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>Photo</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input type="file" size="8" name="file" /></td>
+                    <input class="form-control" type="file" size="8" name="file" required/></td>
                 </tr>
                 <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color="#66FF00"><strong><font color="#000000">Birthday</font></strong></font></td>
+                  <td ><font face="Times New Roman"  size="+1"  color="#66FF00"><strong><font color="">Birthday</font></strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input id="demo1" type="text" size="20" name="dob" placeholder="choose your birthday?" /> 
-                    <a href="javascript:NewCal('demo1','ddmmyyyy')"><img src="cal.gif" width="16" height="16" border="0" alt="Pick a date" /></a> 
+                    <input class="form-control" id="demo1" type="text" size="20" name="dob" placeholder="choose your birthday?ddmmyyyy" required /> 
+                   
                   </td>
                 </tr>
                 <tr> 
                   <td></td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" name="s" value="submit" class="button" /> 
-                    &nbsp;&nbsp;&nbsp; <input type="reset" name="r" value="clear" class="button" /></td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input class="btn btn-primary" type="submit" name="s" value="submit" class="button" /> 
+                    &nbsp;&nbsp;&nbsp; <input class="btn btn-primary" type="reset" name="r" value="clear" class="button" required/></td>
                 </tr>
               </table>
             </form>

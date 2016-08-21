@@ -58,7 +58,7 @@
 
                 ps.executeUpdate();
 
-                response.sendRedirect("index.html?success");
+                response.sendRedirect("login.jsp");
             } catch (Exception r) {
                 out.println(r.getMessage());
             }

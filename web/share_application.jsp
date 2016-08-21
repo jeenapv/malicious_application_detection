@@ -129,7 +129,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                 <%@include  file="navigation_bar.html" %>
+                 <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -137,119 +137,120 @@
 
                 
     <div id="index_content"> 
-	
-	<div >
-      <table  class="table" align="center">
-     <thead>
-        <tr>
-          <td   >App Id</td>
-          <td width="">App Name</td>
-          <td width="">Description</td>
-          <td width="">Categories</td>
-          <td width="">Company name</td>
-		   <td width="">Permissions </td>
-		   <td width="">Rating</td>
-		   <td width="">User Count</td>
-		   <td width="">App review</td>
-		   <td width="">Intenal links</td>
-		   <td width="">External links</td>
+<%	
+	ResultSet rs=null;
+	ResultSet rss=null;
 
-
-        </tr>
-        <thead>
-        <%
-		
-		
-		
-
-		
-
-ResultSet rs=null;
-
+	String appid = request.getParameter("appid");
 
 
 
 try
 {
-    
- String sqll="select * from applications ";
+        String app_id;
+	String app_name;
+	String app_description = null;
+	String categories = null;
+	String company = null;
+	String permissions;
+	String rating;
+        rating = null;
+	String user_count;
+        user_count = null;
+	String app_review;
+	String internal_links;
+        internal_links = null;
+	String external_links;
+        external_links = null;
+	String permissions_count;
+        permissions_count = null;
+        String totalcount =null;
+ String sqll="select * from applications where app_id="+appid+" ";
  rs=stmt.executeQuery(sqll);
  while(rs.next()){
 	  
+	 app_id=rs.getString("app_id");
+         app_name=rs.getString("app_name");
+	 app_description=rs.getString("app_description");
+	 categories=rs.getString("categories");
+	 company=rs.getString("company");
+	 permissions=rs.getString("permissions");
+	 rating=rs.getString("rating");
+	 user_count=rs.getString("users_count");
+	 app_review=rs.getString("app_review");
+	 internal_links=rs.getString("internal_links");
+	 external_links=rs.getString("external_links");
+	 permissions_count=rs.getString("permissions_count");
 	
-	String app_id=rs.getString("app_id");
-	String app_name=rs.getString("app_name");
-	String app_description=rs.getString("app_description");
-	String categories=rs.getString("categories");
-	String company=rs.getString("company");
-	String permissions=rs.getString("permissions");
-	String rating=rs.getString("rating");
-	String user_count=rs.getString("users_count");
-	String app_review=rs.getString("app_review");
-	String internal_links=rs.getString("internal_links");
-	String external_links=rs.getString("external_links");
+	String sqlll="select count(*) as count from login ";
+ 	rss=stmtt.executeQuery(sqlll);
+ 	while(rss.next()){
+ 	totalcount = rss.getString("count");
+        }
 
 
-	
-
-	
-	%>
-        <tr> 
-          <td id="<%=app_id%>">
-            <%=app_id%>
-          </td>
-          <td >
-            <%=app_name%>
-          </td>
-          <td >
-            <%=app_description%>
-          </td>
-          <td >
-            <%=categories%>
-          </td>
-		  <td >
-            <%=company%>
-          </td>
-          <td >
-            <%=permissions%>
-          </td>
-          <td >
-            <%=rating%>
-          </td><td >
-            <%=user_count%>
-          </td><td >
-            <%=app_review%>
-          </td><td >
-            <%=internal_links%>
-          </td>
-          <td >
-            <%=external_links%>
-          </td>
-          <td >
-            <a href="remove_application.jsp?appid=<%=app_id%>">remove</a>
-          </td>
-          
-      
-        </tr>
-        <% 
-
+	}
+int companyGiven         =    0;
+int categroyGiven        =    0;
+int descriptionGiven     =    0;
+double appStatus  =  0;  // Result variable.	
+double permissionCount      =    Double.parseDouble(permissions_count);
+double totalRating          =    Double.parseDouble(rating);
+double installedUserCount   =    Double.parseDouble(user_count);
+double totalUserCount       =    Double.parseDouble(totalcount);
+double internelLinks        =    Double.parseDouble(internal_links);
+double externalLinks        =    Double.parseDouble(external_links);
+if(company!=null) {
+	 companyGiven = 1;
+}
+if(categories!=null) {
+	categroyGiven = 1;
+}
+if(app_description!=null) {
+	descriptionGiven = 1;
 }
 
+//----------Permission count   30%---------------------
 
+appStatus = appStatus+((100-(100*permissionCount/42))/100)*30;  //30 if permissionCount is 0 and 0 if app count is 42.
+
+//appStatus = 100.11;
+
+//----------Rating    30%---------------------
+appStatus = appStatus+((totalRating/5)*30);
+
+//----------User Count  10%---------------------
+appStatus = appStatus+((installedUserCount/totalUserCount)*10);
+
+//----------Internal/External links   20%---------------------
+double count = ((internelLinks/(externalLinks*2))*20);
+
+if(count>20){
+ count = 20;
 }
 
-catch(Exception e2)
-{
-out.print(e2);
+appStatus = appStatus+count;
+//----------Company Given  3%---------------------
+appStatus = appStatus+(companyGiven*3);
+//----------Category given 3%---------------------
+appStatus = appStatus+(categroyGiven*3);
+//----------Description given 3%---------------------
+appStatus = appStatus+(descriptionGiven*3);
+
+if(appStatus < 41){
+%><h2 style="color:red;text-align:center">This Application may Malicious</h2><%
 }
-
-
-
-
-
+else{
 %>
-      </table>
-      </div>
+  <h2 style="color:red;text-align:center">App is <%=appStatus%>% of good</h2><%
+}
+
+}
+catch(Exception e2){
+	
+}
+
+	%>
       <div style="clear: both"></div>
               </div>
 
