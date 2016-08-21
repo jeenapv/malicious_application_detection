@@ -139,7 +139,7 @@
     <div id="index_content"> 
 	
 	<div >
-      <table  class="table" align="center">
+      <table  class="table app-tbl" align="center">
      <thead>
         <tr>
           <td   >App Id</td>
@@ -147,7 +147,7 @@
           <td width="">Description</td>
           <td width="">Categories</td>
           <td width="">Company name</td>
-		   <td width="">Permissions </td>
+		   
 		   <td width="">Rating</td>
 		   <td width="">User Count</td>
 		   <td width="">App review</td>
@@ -210,9 +210,7 @@ try
 		  <td >
             <%=company%>
           </td>
-          <td >
-            <%=permissions%>
-          </td>
+         
           <td >
             <%=rating%>
           </td><td >

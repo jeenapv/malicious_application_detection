@@ -395,3 +395,37 @@ body {
 .nivo-controlNav { bottom:-20px; position:absolute; right:0;}
 .nivo-controlNav a { float:left; width:14px; height:14px; display:block; position:relative; z-index:99;	cursor:pointer; text-indent:-9999%; }
 .nivo-controlNav a.active {	background-position:left top; margin-top:-1px;}
+
+
+table.app-tbl{
+	    background-color: rgba(255,255,255,0.6);
+}
+table.app-tbl td  , table.app-tbl th{
+    font-weight: bold;
+    padding-left: 12px !important;
+}
+div#footer_box b {
+    color: #3b5997 !important;
+    height: 40px;
+    line-height: 40px;
+    /* margin-top: -6px; */
+}
+div#footer_box marquee {
+    vertical-align: bottom;
+}
+a.loading-send {
+    background: #23527c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+	text-decoration:none;
+}
+a.loading-send:hover {
+    background: #fff;
+    color: #23527c;
+	text-decoration:none;
+}
+
+
+
+

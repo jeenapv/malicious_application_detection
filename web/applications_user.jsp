@@ -139,7 +139,7 @@
     <div id="index_content"> 
 	
 	<div >
-      <table  class="table" align="center">
+      <table  class="table app-tbl" align="center">
      <thead>
         <tr>
           <td   >App Id</td>
@@ -192,7 +192,7 @@ try
 	%>
         <tr> 
           <td id="<%=app_id%>">
-            <%=app_id%>
+            000<%=app_id%>
           </td>
           <td >
             <%=app_name%>
