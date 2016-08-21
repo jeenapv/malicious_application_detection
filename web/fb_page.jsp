@@ -77,7 +77,8 @@
   
     <div id="main"> 
      
-	  <p><img src="user2.jsp" width="135" height="155"></p>
+	 <!--<p><img src="user2.jsp" width="135" height="155"></p>-->
+      <p><img src="images/defaultusr.png" width="135" height="155"></p>
             <p>&nbsp;</p>
             <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="3"><b><%=name%></b></font> </p>
             <p>&nbsp;</p>

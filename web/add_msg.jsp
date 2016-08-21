@@ -57,15 +57,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -78,7 +70,8 @@
 				%>
 				
                <table width="774"><tr><td width="362">
-      <p><img src="user2.jsp" width="135" height="155"> </p>
+     <!--<p><img src="user2.jsp" width="135" height="155"> </p>-->
+            <p><img src="images/defaultusr.png" width="135" height="155"></p>
             <p>&nbsp;</p>
             <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2"  color="#FFCC00"><i> 
               <%=email%> </i></font></p>
@@ -93,7 +86,7 @@
             <p><br>
               &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b><font size="2" face="Times New Roman, Times, serif">Friends 
               Request</font></b></font></a> </p>
-            <p><br>
+            <!--<p><br>
               <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></p>
             <p><br>
               &nbsp;&nbsp;<a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a></p>
@@ -101,7 +94,9 @@
               &nbsp;&nbsp;<a href="user.jsp"><font color="#009933"><b>Add Messages</b></font></a></p>
             <p><br>
               &nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a> 
-            </p></td>
+            </p>-->
+            
+            </td>
           <td width="400"><p><a href="add.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Add 
               Messages</font></a> </a> </p>
             <p>&nbsp; </p>

@@ -56,14 +56,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="fb_page.jsp">Back</a></li>
-                       
-                    </ul>
-                </div>
+                           <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -81,7 +74,8 @@
 	
 	%><div id="main">    
           
-            <p><img src="user2.jsp" width="135" height="155"> </p>
+            <!--<p><img src="user2.jsp" width="135" height="155"> </p>-->
+            <p><img src="images/defaultusr.png" width="135" height="155"></p>
             <p>&nbsp;</p>
             <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2"  color="#FFCC00"><i><%=email%></i></font> </p>
  <form name="s" action="search2.jsp">
@@ -94,7 +88,7 @@
           <h3><br>
             &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends Request</b></font></a> 
           </h3>
-            <h3><br>
+           <!-- <h3><br>
               <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></h3>
             <h3><br>
               &nbsp;&nbsp; <a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a></h3>
@@ -104,7 +98,9 @@
               &nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a></h3>
             <h3><br>
               &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
-              LOGOUT</strong></font></a> </h3></td>
+              LOGOUT</strong></font></a> </h3>-->
+              
+              </td>
 	 
 	 <td width="497">
 	 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 

@@ -57,15 +57,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
+                            <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -83,8 +75,8 @@ String b=(String)session.getAttribute("b");
      
 	  
        
-	  <p><img src="user2.jsp" width="135" height="155"> <br>
-            </p>
+	  <!--<p><img src="user2.jsp" width="135" height="155"> </p>-->
+            <p><img src="images/defaultusr.png" width="135" height="155"></p>
             <p>&nbsp; </p>
             <p><font color="#00CC66" size="3"><b>Welcome:</b></font>&nbsp;<font  color="#FFCC00" face="Times New Roman, Times, serif" size="3.5"><i><%=b%></i></font></h2> &nbsp;</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
@@ -98,7 +90,7 @@ String b=(String)session.getAttribute("b");
             <p><br>
               &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends 
               Request</b></font></a></p>
-            <p> <br>
+            <!--<p> <br>
               <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></p>
             <p><br>
               &nbsp;&nbsp;<a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a></p>
@@ -108,7 +100,9 @@ String b=(String)session.getAttribute("b");
               &nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a></p>
             <p><br>
               &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
-              LOGOUT</strong></font></a> </p></td>
+              LOGOUT</strong></font></a> </p>-->
+              
+              </td>
 	  
 	  <td width="241">
 	
