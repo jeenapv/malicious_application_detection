@@ -208,7 +208,7 @@ try
             <%=rating%>
           </td>
           <td >
-            <a href="share_application.jsp?appid=<%=app_id%>"> Share </a>
+            <a class="loading-send" href="share_application.jsp?appid=<%=app_id%>"> Share </a>
           </td>
           
       
@@ -263,5 +263,32 @@ out.print(e2);
         <div id="footer">
                 <div class="red_hr"></div>
                  </div>
+<div style="display:none" class="app-loader2">
+</div>
+<style>
+.app-loader {
+    background: url("images/progress_bar.gif") no-repeat scroll center center #FFF;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+	    top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+}
+</style>  
+<script>
+$(document).ready(function(){
+		$('.loading-send').click(function(e){
+			e.preventDefault();
+			$('.app-loader2').show();  
+			$('.app-loader2').addClass('app-loader');
+		    var href = event.currentTarget.getAttribute('href');
+			setTimeout(function(){ 
+				       window.location=href;
+				}, 4400);
+		});
+	});
+</script> 
     </body>
 </html>
