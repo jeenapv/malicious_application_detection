@@ -1,4 +1,5 @@
-<%@ page import="java.sql.*,databaseconnection.*"%>
+<%@ page import="java.sql.*" %>
+<%@include file="db.jsp" %>
 <%@ page import="java.io.*,java.util.*,javax.mail.*"%>
 <%@ page import="javax.mail.internet.*,javax.activation.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
@@ -19,15 +20,15 @@ String host="", user="", pass="";
 
 host ="smtp.gmail.com"; //"smtp.gmail.com";
 
-user =""; //"YourEmailId@gmail.com" // email id to send the emails
+user ="manoj.mohanan23@gmail.com"; //"YourEmailId@gmail.com" // email id to send the emails
 
-pass ="chennaisunday"; //Your gmail password
+pass ="9388651882"; //Your gmail password
 
 String SSL_FACTORY = "javax.net.ssl.SSLSocketFactory";
 
 String to =emailid; // out going email id
 
-String from =""; //Email id of the recipient
+String from ="manoj.mohanan23@gmail.com"; //Email id of the recipient
 //String subject=(String)session.getAttribute("subject");
 String subject ="welcome";
 
@@ -72,7 +73,7 @@ transport.close();
 
 
 %>
-<%@ page import="java.sql.*,databaseconnection.*"%>
+<%@ page import="java.sql.*"%>
 
 <%
 String s=null,s1=null,s2=null,s3=null,s4=null,s5=null,s6=null,s7=null;
@@ -82,8 +83,8 @@ String id=(String)session.getAttribute("uid");
 
 try
 {
-Connection con1 = databasecon.getconnection();
-PreparedStatement ps1=con1.prepareStatement("update login set pcode1=? where id='"+id+"'");
+
+PreparedStatement ps1=con.prepareStatement("update login set pcode1=? where id='"+id+"'");
 
 ps1.setString(1,c);
 //ps1.setString(2,dd);
@@ -94,17 +95,9 @@ ps1.executeUpdate();
  response.sendRedirect("activation_post1.jsp?success");	  
 }
 
-		
-		catch (Exception ex) 
-				{
-					out.println(ex.getMessage());
-				}
-		
-				
-			
-				
-
-
-
+catch (Exception ex) 
+{
+ out.println(ex.getMessage());
+}
 %>
 
