@@ -1,26 +1,25 @@
-<%@ page import="java.sql.*,databaseconnection.*"%>
+<%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
+<%@include file="db.jsp" %>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 
 <% Blob image = null;
 
-Connection con = null;
+
 
 byte[ ] imgData = null ;
 
-Statement stmt = null;
+
 String a=(String)session.getAttribute("a");
 ResultSet rs = null;
 String b=request.getQueryString();
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
 
-con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","admin");
 
-stmt = con.createStatement();
+String id = (String)session.getAttribute("uid");
 
-rs = stmt.executeQuery("select photo from login where name like '%"+b+"%' AND log='"+a+"'");
+rs = stmt.executeQuery("select photo from login where id= '"+id+"'  ");
 
 while(rs.next()) {
 

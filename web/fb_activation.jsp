@@ -51,7 +51,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                 <%@include  file="navigation_user.html" %>
+              
                 <div id="header">
                     
 					

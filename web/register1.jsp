@@ -27,8 +27,8 @@
             String f = request.getParameter("file");
 
             String j = request.getParameter("dob");
-
-            String z = "D:\\bg4.jpg";
+            String z = "C:\\Users\\manoj\\Documents\\NetBeansProjects\\malicious_application_detection\\web\\images\\gallery\\";
+            z = z+f;
             int aaa = (int) (Math.random() * 100);
             int bbb = aaa * 5;
             File image = new File(z);

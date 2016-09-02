@@ -75,7 +75,8 @@ body {
 }
 
 #content{
-    background: url(images/bor_bg.png) repeat-y center;
+    /*background: url(images/bor_bg.png) repeat-y center;*/
+    background:rgba(0,0,0,0.7) !important;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 8px;
@@ -192,12 +193,12 @@ body {
 }
 
 #footer_box_top{
-    background: url(images/footer_box_top.jpg) no-repeat top;
+    /*background: url(images/footer_box_top.jpg) no-repeat top;*/
     height: 6px;
 }
 
 #footer_box_bg{
-    background: #282828 url(images/footer_box_bg.jpg) repeat-x top;
+   /* background: #282828 url(images/footer_box_bg.jpg) repeat-x top;*/
     min-height: 90px;
     padding-left: 30px;
 }

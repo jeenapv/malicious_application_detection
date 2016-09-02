@@ -74,8 +74,8 @@
 	
 	%><div id="main">    
           
-            <!--<p><img src="user2.jsp" width="135" height="155"> </p>-->
-            <p><img src="images/defaultusr.png" width="135" height="155"></p>
+            <p><img src="user2.jsp" width="135" height="155"> </p>
+            <!--<p><img src="images/defaultusr.png" width="135" height="155"></p>-->
             <p>&nbsp;</p>
             <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2"  color="#FFCC00"><i><%=email%></i></font> </p>
  <form name="s" action="search2.jsp">
@@ -113,41 +113,37 @@
 				<br>
 <%
 String b=(String)session.getAttribute("b");
+
 String q=null;
+
 String a=(String)session.getAttribute("a");
 
-try {
-    
-PreparedStatement stmt3 = con.prepareStatement("select id from login where email='"+b+"' AND log='"+a+"'");
-
-ResultSet rs3= stmt3.executeQuery();
-
-while(rs3.next()) {
- q=rs3.getString(1);
- session.setAttribute("i",q);
-}
-}
-catch(Exception e3)
-{
-out.println(e3.getMessage());
-
-}
-
-
+String uid=(String)session.getAttribute("uid");
 
 String s=null,s1=null;
-
+String sendid=null,sendname=null;
 try {
 
-PreparedStatement stmt1 = con.prepareStatement("select recid,recid1 from friends where sendid='"+q+"' AND log='"+a+"'");
+PreparedStatement stmt1 = con.prepareStatement("select recid,recid1,sendid,sendid1 from friends where (sendid='"+uid+"' or recid='"+uid+"') and status!='waiting' ");
 
 ResultSet rs1= stmt1.executeQuery();
 
 while(rs1.next()) {
  s=rs1.getString(1);
- session.setAttribute("ii",s);
-  s1=rs1.getString(2);
+ s1=rs1.getString(2);
+ sendid = rs1.getString(3);
+ sendname=rs1.getString(4);
 
+
+
+
+ if(rs1.getString(1).equals(uid)){
+    s  = sendid;
+    s1 = sendname;  
+}
+else{
+
+}
 %>
 
 <tr>

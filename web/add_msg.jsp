@@ -1,5 +1,5 @@
-<%@ page import="java.sql.*,databaseconnection.*"%>
-
+<%@ page import="java.sql.* "%>
+<%@include file="db.jsp" %>
 <%@ page import="java.io.*"%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 
@@ -11,10 +11,9 @@
         <title>facebook</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
-		
-		
-		<!-- Begin JavaScript -->
+        <!-- Begin JavaScript -->
 
 		<script type="text/javascript" src="lib/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="lib/jquery.tools.js"></script>
@@ -70,8 +69,9 @@
 				%>
 				
                <table width="774"><tr><td width="362">
-     <!--<p><img src="user2.jsp" width="135" height="155"> </p>-->
-            <p><img src="images/defaultusr.png" width="135" height="155"></p>
+            <p><img src="user2.jsp" width="135" height="155"> </p>
+            
+            
             <p>&nbsp;</p>
             <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2"  color="#FFCC00"><i> 
               <%=email%> </i></font></p>
@@ -97,18 +97,38 @@
             </p>-->
             
             </td>
-          <td width="400"><p><a href="add.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Add 
-              Messages</font></a> </a> </p>
+          <td width="400"><p><a href="add.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">POST</font></a> </a> </p>
             <p>&nbsp; </p>
-            <form name="s1" action="activation_post.jsp" onClick="return validation()">
+   <form name="s1" method="post" action="post.jsp"  >
 
 <table bgcolor="#666666" height="150" width="150">
-<tr><td></td><td><textarea rows="5" cols="50" placeholder="Say something about this...." name="msg"></textarea></td></tr>
-<tr><td></td>
+<tr><td></td><td><textarea rows="5"  cols="50" placeholder="Say something about this...." name="msg"></textarea></td></tr>
+<tr><td></td><td>
+<select name="to_uid" class="form-control">
+<% 
+ResultSet rs = null;
+String uid = (String)session.getAttribute("uid");
+rs = stmt.executeQuery("select * from login where id != "+uid+" ");
+while(rs.next()){
+    String to_uid = rs.getString(1);
+    String to_name = rs.getString(2);
+
+    %>
+    <option value="<%=to_uid%>"><%=to_name%></option>
+    <%
+}
+   %>
+    
+    
+</select>        
+</td></tr>
+<tr><td>
+        
+    </td>
         <td> 
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="submit" type="submit" value="  post  ">
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="submit" class="form-control" type="submit" value="  post  ">
         </td>
       </tr>
      </table></form>

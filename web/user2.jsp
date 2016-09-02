@@ -2,23 +2,28 @@
 
 <%@ page import="java.io.*"%>
 
-<%@include file="db.jsp" %>
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
-
 <% Blob image = null;
+String email=(String)session.getAttribute("emailid");
+String pass=(String)session.getAttribute("password");
+
+Connection con = null;
 
 byte[ ] imgData = null ;
 
+Statement stmt = null;
 
-String log=(String)session.getAttribute("a");
 ResultSet rs = null;
-String email=(String)session.getAttribute("emailid");
-String pass=(String)session.getAttribute("c");
+String uid=(String)session.getAttribute("uid");
+
 try {
 
+Class.forName("com.mysql.jdbc.Driver");
 
+con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
 
-rs = stmt.executeQuery("select photo from login where log='"+log+"' AND email='"+email+"' AND password='"+pass+"'");
+stmt = con.createStatement();
+
+rs = stmt.executeQuery("select photo from login where  id="+uid+" ");
 
 while(rs.next()) {
 

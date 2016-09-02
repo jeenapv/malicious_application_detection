@@ -3,9 +3,8 @@
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 <%@include file="db.jsp" %>
 
-<% Blob image = null;
-
-
+<%
+Blob image = null;
 
 byte[ ] imgData = null ;
 
@@ -17,13 +16,7 @@ String b=(String)session.getAttribute("p");
 System.out.println(b);
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
-
-con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
-
-stmt = con.createStatement();
-
-rs = stmt.executeQuery("select photo from photo where id='"+p+"' AND log='"+a+"'");
+rs = stmt.executeQuery("select photo from photo where id='"+p+"' ");
 
 while(rs.next()) {
 

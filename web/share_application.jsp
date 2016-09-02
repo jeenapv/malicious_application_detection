@@ -142,6 +142,7 @@
 	ResultSet rss=null;
 
 	String appid = request.getParameter("appid");
+        String appname = request.getParameter("appname");
 
 
 
@@ -237,12 +238,43 @@ appStatus = appStatus+(categroyGiven*3);
 //----------Description given 3%---------------------
 appStatus = appStatus+(descriptionGiven*3);
 
-if(appStatus < 41){
-%><h2 style="color:red;text-align:center">This Application may Malicious</h2><%
+if(appStatus < 80){
+%><h2 style="color:red;text-align:center">This Application may Malicious</h2>
+<br>
+   
+
+    </form>
+<h3 style="color:blue"><center>Are you sure you want to continue?</center></h3>
+ <form action="application_save.jsp" method="get">
+        <input type="hidden" value="<%=appid%>" name="appid">
+        <input type="hidden" value="<%=appname%>" name="appname">
+            <select name="to_uid" class="form-control">
+<% 
+
+String uid = (String)session.getAttribute("uid");
+
+rs = stmt.executeQuery("select * from login where id != "+uid+" ");
+while(rs.next()){
+    String to_uid = rs.getString(1);
+    String to_name = rs.getString(2);
+
+    %>
+    <option value="<%=to_uid%>"><%=to_name%></option>
+    <%
+}
+   %>
+    
+    
+</select>        
+<h3><input type="submit" class="btn btn-primary" value="Share"> <a class="btn btn-primary" href="applications_user.jsp">No</a></center></h3>
+<!--<h3><center><a href="application_save.jsp?appid=<%=appid%>&appname=<%=appname%>" >Yes</a> 
+<a href="applications_user.jsp">No</a></center></h3>-->
+
+<%
 }
 else{
 %>
-  <h2 style="color:red;text-align:center">App is <%=appStatus%>% of good</h2><%
+  <h2 style="color:red;text-align:center">App is <%=appStatus%>% Trustable</h2><%
 }
 
 }

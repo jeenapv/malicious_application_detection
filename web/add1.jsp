@@ -1,4 +1,4 @@
-<%@ page import="java.sql.*,databaseconnection.*"%>
+<%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
 <%@include file="db.jsp" %>
 <%
@@ -7,48 +7,28 @@ String msg=request.getParameter("msg");
 String msg1=request.getParameter("msg1");
 String a=(String)session.getAttribute("a");
 String bb=null,c=null;
-String f1="C:\\Users\\manoj\\Documents\\NetBeansProjects\\Facebook\\web\\images\\gallery\\";
+String f1="C:\\Users\\manoj\\Documents\\NetBeansProjects\\malicious_application_detection\\web\\images\\gallery\\";
 String z =  f1+msg1;
 String s="facebook";
 String b=(String)session.getAttribute("b");
 File image=new File(z);
-try {
 
-PreparedStatement stmt1 = con.prepareStatement("select id,name from login where email='"+b+"' AND log='"+a+"'");
+String name = (String)session.getAttribute("name");
 
-ResultSet rs1 = stmt1.executeQuery();
-
-while(rs1.next()) {
- bb=rs1.getString(1);
- session.setAttribute("id",bb);
-c=rs1.getString(2);
-session.setAttribute("name",c);
-}
-
-}
-catch(Exception e3)
-{
-out.println(e3.getMessage());
-
-}
-
+String uid = (String)session.getAttribute("uid");
 
 PreparedStatement ps = null;
 
 	ResultSet rs = null;
-		
-
-
 	
 	try
 	{
-		
-		
-
 		ps = con.prepareStatement("insert into photo(id1,name,photo,msg,log) values(?,?,?,?,'"+a+"')");
-		ps.setString(1,bb);
+		
+                ps.setString(1,uid);
 	
-ps.setString(2,c);
+                ps.setString(2,name);
+
 
 fis=new FileInputStream(image);
 ps.setBinaryStream(3, (InputStream)fis, (int)(image.length()));

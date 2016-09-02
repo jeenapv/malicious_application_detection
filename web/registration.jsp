@@ -137,7 +137,7 @@
                 <tr> 
                   <td ><font face="Times New Roman"  size="+1"  color="#66FF00"><strong><font color="">Birthday</font></strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input class="form-control" id="demo1" type="text" size="20" name="dob" placeholder="choose your birthday?ddmmyyyy" required /> 
+                    <input class="form-control" id="demo1" type="date" size="20" name="dob" placeholder="dd-mm-yyyy" required /> 
                    
                   </td>
                 </tr>

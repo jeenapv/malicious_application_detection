@@ -33,7 +33,10 @@
 
             <div id="content_top"></div>
             <div id="content">
+            <% String a = request.getParameter("id");
             
+            if(a == "1"){
+            %>
                     <nav class="navbar navbar-inverse">
                         <div class="container-fluid">
                         <div class="navbar-header">
@@ -53,6 +56,7 @@
                             <li><a href="view.jsp">Users</a></li>
 
                         </ul>
+                            <%}%>
                         </div>
                     </nav>
                 
@@ -60,7 +64,7 @@
     
     <div class="container-fluid">
         <h2>Add Application</h2>
-	  <form action="add_application.jsp" method="POST">
+	  <form action="add_application.jsp?id=1" method="POST">
     <div class="form-group">
       <label for="appname">App Name *</label>
       <input type="text" class="form-control" id="appname" name="appname" placeholder="App Name" required>

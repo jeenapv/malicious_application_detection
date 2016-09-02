@@ -55,13 +55,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="fb_page.jsp">Back</a></li>
-                        
-                    </ul>
-                </div>
+                  <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					
@@ -96,13 +90,13 @@
           </h3>
           
       <h3><br>
-        <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></h3>
+        
       <h3><br>
-        &nbsp; <a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a></h3>
+        
       <h3><br>
-        &nbsp;&nbsp;<a href="user1.jsp"><font color="#009933"><b>Add Messages</b></font></a></h3>
+        
       <h3><br>
-        &nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a></h3>
+        
       <h3><br>
         &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
         LOGOUT</strong></font></a> </h3></td>

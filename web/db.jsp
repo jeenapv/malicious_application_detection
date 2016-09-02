@@ -9,5 +9,7 @@
     Class.forName("com.mysql.jdbc.Driver");
     con=DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook", "root", "");
      stmt = con.createStatement();  
-     stmtt = con.createStatement();  
+     stmtt = con.createStatement();
+     stmttt = con.createStatement();  
+
 %> 

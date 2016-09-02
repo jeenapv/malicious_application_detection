@@ -16,10 +16,11 @@
 		
 		<!-- Begin JavaScript -->
 
-		<script type="text/javascript" src="lib/jquery-1.3.2.min.js"></script>
-		<script type="text/javascript" src="lib/jquery.tools.js"></script>
-    	<script type="text/javascript" src="lib/jquery.custom.js"></script>
-<script language="javascript" type="text/javascript" src="datetimepicker.js"></script>
+		
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+            
+
 
 		<style>
 
@@ -208,7 +209,7 @@ try
             <%=rating%>
           </td>
           <td >
-            <a class="loading-send" href="share_application.jsp?appid=<%=app_id%>"> Share </a>
+            <a class="loading-send" href="share_application.jsp?appid=<%=app_id%>&appname=<%=app_name%>"> Share </a>
           </td>
           
       
@@ -267,7 +268,7 @@ out.print(e2);
 </div>
 <style>
 .app-loader {
-    background: url("images/progress_bar.gif") no-repeat scroll center center #FFF;
+    background: url("images/progress_bar.gif")no-repeat scroll center center #FFF;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -283,10 +284,10 @@ $(document).ready(function(){
 			e.preventDefault();
 			$('.app-loader2').show();  
 			$('.app-loader2').addClass('app-loader');
-		    var href = event.currentTarget.getAttribute('href');
+		    var href = e.currentTarget.getAttribute('href');
 			setTimeout(function(){ 
-				       window.location=href;
-				}, 4400);
+				 window.location=href;
+				}, 4000);
 		});
 	});
 </script> 

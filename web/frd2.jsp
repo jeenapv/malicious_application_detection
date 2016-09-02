@@ -75,8 +75,8 @@ String b=(String)session.getAttribute("b");
      
 	  
        
-	  <!--<p><img src="user2.jsp" width="135" height="155"> </p>-->
-            <p><img src="images/defaultusr.png" width="135" height="155"></p>
+	  <p><img src="user2.jsp" width="135" height="155"> </p>
+          <!--  <p><img src="images/defaultusr.png" width="135" height="155"></p>-->
             <p>&nbsp; </p>
             <p><font color="#00CC66" size="3"><b>Welcome:</b></font>&nbsp;<font  color="#FFCC00" face="Times New Roman, Times, serif" size="3.5"><i><%=b%></i></font></h2> &nbsp;</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
@@ -115,38 +115,14 @@ String b=(String)session.getAttribute("b");
           <p>&nbsp; </p>
           <table>
 <%
-String a=(String)session.getAttribute("a");
-String b1=(String)session.getAttribute("b");
-
-
-String id=null;
-try {
-
-PreparedStatement stmt2 = con.prepareStatement("select id from login where email='"+b1+"' AND log='"+a+"'");
-
-ResultSet rs2 = stmt2.executeQuery();
-
-while(rs2.next()) {
-id=rs2.getString(1);
-}
-session.setAttribute("name",id);
-System.out.println("id");
-
-}
-catch(Exception e2)
-{
-out.println(e2.getMessage());
-
-}
-
 
 String b2="waiting";
-
+String id = (String)session.getAttribute("uid");
 try {
 
 
 
-PreparedStatement stmt6 = con.prepareStatement("select sendid,sendid1 from friends where recid='"+id+"' AND status='"+b2+"' AND log='"+a+"'");
+PreparedStatement stmt6 = con.prepareStatement("select sendid,sendid1 from friends where recid='"+id+"' AND status='"+b2+"' ");
 
 ResultSet rs = stmt6.executeQuery();
 

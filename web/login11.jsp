@@ -4,7 +4,7 @@
 <%
     String a = request.getParameter("log");
     String b = request.getParameter("email");
-    session.setAttribute("emailid", b);
+    
     String c = request.getParameter("pass");
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -24,14 +24,22 @@
 
         if (rs.next()) {
             id = rs.getString(1);
-            session.setAttribute("uid", id);
+            String emailid = rs.getString(3);
+            
             String name = rs.getString(2);
             session.setAttribute("name", name);
 
             String remail = rs.getString(4);
             System.out.println(remail);
             session.setAttribute("remail", remail);
-
+            session.setAttribute("emailid", emailid);
+            session.setAttribute("uid", id);
+            String password =  rs.getString(5);
+            session.setAttribute("pwd", password);
+            
+           long millis = System.currentTimeMillis();
+           
+            stmt.executeUpdate("update login set login_time='"+millis+"' where id="+id+" ");
             /*
             count=rs.getInt(5);
             session.setAttribute("count",count);

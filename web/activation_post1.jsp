@@ -51,14 +51,7 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="fb_page.jsp">Back</a></li>
-                        
-                    </ul>
-                </div>
+                 <%@include  file="navigation_user.html" %>
                 <div id="header">
                     
 					

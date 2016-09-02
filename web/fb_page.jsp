@@ -77,8 +77,8 @@
   
     <div id="main"> 
      
-	 <!--<p><img src="user2.jsp" width="135" height="155"></p>-->
-      <p><img src="images/defaultusr.png" width="135" height="155"></p>
+        <p><img src="user2.jsp" width="135" height="155"></p>
+      <!--<p><img src="images/defaultusr.png" width="135" height="155"></p>-->
             <p>&nbsp;</p>
             <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="3"><b><%=name%></b></font> </p>
             <p>&nbsp;</p>
@@ -125,17 +125,17 @@ String a=(String)session.getAttribute("a");
 String m=null,n=null,o=null,p=null,q=null,r=null,s=null,t=null;
 try {
 
-PreparedStatement stmt5 = con.prepareStatement("select name,msg,id1,id from photo where log='"+a+"'");
+PreparedStatement stmt5 = con.prepareStatement("select name,msg,id1,id from photo");
 
 ResultSet rs5 = stmt5.executeQuery();
 
 while(rs5.next()) {
- m=rs5.getString(1);
- n=rs5.getString(2);
+  m=rs5.getString(1);
+  n=rs5.getString(2);
   o=rs5.getString(3);
   session.setAttribute("o",o);
   p=rs5.getString(4);
-    session.setAttribute("p",p);
+  session.setAttribute("p",p);
 	
   %>
   <br>
@@ -149,9 +149,6 @@ while(rs5.next()) {
 
 <tr><td><font  color="#99FF33"><b><%=n%></b></font></td><td><a href="friends6.jsp?<%=p%>"><img src="friends3.jsp?<%=p%>" height="205" width="205"></a></td></tr>
 
-
-
-
 <%
 }
 }
@@ -161,19 +158,20 @@ out.println(e3.getMessage());
 
 }
 
-
+String id = (String)session.getAttribute("uid");
 
 
 try {
 
-PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1 from message where log='"+a+"'");
+PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1 from message where to_uid="+id+" or id1="+id+"   ");
 
 ResultSet rs1 = stmt1.executeQuery();
 
 while(rs1.next()) {
- q=rs1.getString(1);
+    q=rs1.getString(1);
     r=rs1.getString(2);
-	s=rs1.getString(3);
+    s=rs1.getString(3);
+    //kekes
 %>
  <tr><td><img src="friends1.jsp?<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
 <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#006699"><b>a message --></font> <font   color="#CC33FF"><%=r%>"</font>"</b> </td>
@@ -188,12 +186,6 @@ catch(Exception e3)
 out.println(e3.getMessage());
 
 }
-
-
-
-
-
-
 
 try {
 
@@ -234,6 +226,34 @@ out.println(e3.getMessage());
 
 
 
+%>
+<%
+
+try {
+
+
+PreparedStatement stmt1 = con.prepareStatement("select application_shared.*,login.name from  application_shared left join login on login.id=shared_userid where to_userid="+id+" or shared_userid="+id+"   ");
+
+ResultSet rs1 = stmt1.executeQuery();
+
+while(rs1.next()) {
+ q=rs1.getString("name");
+    r=rs1.getString("app_name");
+	s=rs1.getString("shared_userid");
+%>
+ <tr><td><img src="friends1.jsp?<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
+<font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#006699"><b>Application --></font><img style="width:56px" src="images/app-icon.png"></img> <font   color="#CC33FF"><%=r%></font></b> </td>
+</tr>
+  
+<%
+}
+
+}
+catch(Exception e3)
+{
+out.println(e3.getMessage());
+
+}
 %>
 </table>
 	

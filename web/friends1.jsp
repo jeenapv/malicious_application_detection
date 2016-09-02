@@ -7,11 +7,11 @@
 Connection con = null;
 
 byte[ ] imgData = null ;
-String a=(String)session.getAttribute("a");
+
 Statement stmt = null;
 
 ResultSet rs = null;
-String iid=request.getQueryString();
+String uid=(String)session.getAttribute("uid");
 
 try {
 
@@ -21,7 +21,7 @@ con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root",
 
 stmt = con.createStatement();
 
-rs = stmt.executeQuery("select photo from login where id='"+iid+"' AND log='"+a+"'");
+rs = stmt.executeQuery("select photo from login where id='"+uid+"' ");
 
 while(rs.next()) {
 

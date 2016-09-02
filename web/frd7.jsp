@@ -13,14 +13,10 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
-		
-		
-		<!-- Begin JavaScript -->
-
+	<!-- Begin JavaScript -->
 		<script type="text/javascript" src="lib/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="lib/jquery.tools.js"></script>
     	<script type="text/javascript" src="lib/jquery.custom.js"></script>
-
 		<style>
 		
 		.btn {
@@ -58,14 +54,9 @@
 
             <div id="content_top"></div>
             <div id="content">
-                <div id="menu">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login.jsp">Login</a></li>
-                        <li><a href="search2.jsp">Back</a></li>
-                       
-                    </ul>
-                </div>
+               
+                         <%@include  file="navigation_user.html" %>
+               
                 <div id="header">
                     
 					
@@ -97,13 +88,13 @@ String b=(String)session.getAttribute("b");
               &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends 
               Request</b></font></a> </p>
             <p><br>
-              <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></p>
+              
             <p><br>
-              &nbsp;&nbsp;<a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a></p>
+              
             <p><br>
-              &nbsp;&nbsp;<a href="user.jsp"><font color="#009933"><b>Add Messages</b></font></a></p>
+              
             <p><br>
-              &nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a></p>
+              
             <p><br>
               &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
               LOGOUT</strong></font></a> </p></td>

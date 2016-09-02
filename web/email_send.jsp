@@ -35,7 +35,7 @@ String messageText ="<b>"+emailid+"</b><br>Activation Code:"+c+"<br>Message:"+oo
 //session.setAttribute("password",c);
 
 boolean sessionDebug = true;
-
+try{
 Properties props = System.getProperties();
         String host = "smtp.gmail.com";
         props.put("mail.smtp.starttls.enable", "true");
@@ -45,7 +45,7 @@ Properties props = System.getProperties();
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-        
+   
 Session mailSession = Session.getDefaultInstance(props, null);
 mailSession.setDebug(sessionDebug);
 Message msg = new MimeMessage(mailSession);
@@ -56,8 +56,9 @@ msg.setSubject(subject);
 msg.setContent(messageText, "text/html"); // use setText if you want to send text
 Transport transport = mailSession.getTransport("smtp");
 transport.connect(host, user, pass);
-try {
+
 transport.sendMessage(msg, msg.getAllRecipients());
+transport.close();
 //out.println("message successfully sended"); // assume it was sent
 //response.sendRedirect("up.jsp");
 }
@@ -65,7 +66,7 @@ catch (Exception err) {
 
 out.println("message not successfully sended"); // assume it’s a fail
 }
-transport.close();
+
 %>
 <%@ page import="java.sql.*"%>
 

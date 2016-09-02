@@ -38,7 +38,7 @@ String messageText ="<b>"+emailid+"</b><br>Activation Code:"+c+"<br>Message:"+oo
 //session.setAttribute("password",c);
 
 boolean sessionDebug = true;
-
+try {
 Properties props = System.getProperties();
 props.put("mail.host", host);
 props.put("mail.transport.protocol.", "smtp");
@@ -57,8 +57,9 @@ msg.setSubject(subject);
 msg.setContent(messageText, "text/html"); // use setText if you want to send text
 Transport transport = mailSession.getTransport("smtp");
 transport.connect(host, user, pass);
-try {
+
 transport.sendMessage(msg, msg.getAllRecipients());
+transport.close();
 //out.println("message successfully sended"); // assume it was sent
 //response.sendRedirect("up.jsp");
 }
@@ -66,8 +67,12 @@ catch (Exception err) {
 
 out.println("message not successfully sended"); // assume it’s a fail
 }
-transport.close();
+try {
 
+}
+catch(Exception e){
+    
+}
 
 
 
