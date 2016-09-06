@@ -81,21 +81,13 @@
   &nbsp;&nbsp;<a href="friends.jsp"><font color="#00CC66"><b>Friends</b></font></a><br>
   &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends Request</b></font></a>
   <br>
-<font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font><br>
-&nbsp;&nbsp;<a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a><br>
-&nbsp;&nbsp;<a href="user.jsp"><font color="#009933"><b>Add Messages</b></font></a><br>
-
-&nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a>
-
-
-
- 
+<font color="#CC3366">&nbsp;&nbsp;<b></b></font><br>
 	  </td>
           <td width="537"><p><a href="add.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Add 
               Photos</font></a> </a></p>
-            <p>&nbsp; </p>
-            <form name="s1" action="add1.jsp" onClick="return validation()">
+          <p>&nbsp; </p>
 
+<form name="s1" action="add1.jsp" onClick="return validation()">
 <table bgcolor="#666666" height="150" width="150">
 <tr><td></td><td><textarea rows="5" cols="50" placeholder="Say something about this...." name="msg"></textarea></td></tr>
 <tr><td></td><td><input type="file" name="msg1"></td></tr>

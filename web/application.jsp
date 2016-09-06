@@ -34,8 +34,7 @@
             <div id="content_top"></div>
             <div id="content">
             <% String a = request.getParameter("id");
-            
-            if(a == "1"){
+            if(!a.equals("1")){
             %>
                     <nav class="navbar navbar-inverse">
                         <div class="container-fluid">

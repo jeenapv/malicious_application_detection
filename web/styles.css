@@ -12,6 +12,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 img{
     padding: 0px;
     border: none;
+    border-radius:30px;
 }
 
 a{

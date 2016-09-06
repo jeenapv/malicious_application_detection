@@ -59,7 +59,7 @@ stmt.execute(query);
        
         String a = request.getParameter("id");
             
-            if(a == "1"){
+            if(!a.equals("1")){
                 response.sendRedirect("view_applications.jsp");
             }
                else{
