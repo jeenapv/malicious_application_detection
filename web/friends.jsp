@@ -77,29 +77,30 @@
             <p><img src="user2.jsp" width="135" height="155"> </p>
             <!--<p><img src="images/defaultusr.png" width="135" height="155"></p>-->
             <p>&nbsp;</p>
-            <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2"  color="#FFCC00"><i><%=email%></i></font> </p>
- <form name="s" action="search2.jsp">
- <table><tr><td><p>&nbsp;</p>
-                    <p><font color="#33CCFF" face="Times New Roman, Times, serif" size="4"><i><b>Search</b></i></font> 
-                      <input type="text" name="v" size="14" placeholder="Search friends">
-                    </p></td></tr></table></form>
-          <h3><br>
-            &nbsp;&nbsp;<a href="friends.jsp"><font  color="#CC9900"><b>Friends</b></font></a></h3>
-          <h3><br>
-            &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends Request</b></font></a> 
-          </h3>
-           <!-- <h3><br>
-              <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></h3>
-            <h3><br>
-              &nbsp;&nbsp; <a href="ga.jsp"><font color="#009933"><b>My Gallery</b></font></a></h3>
-            <h3><br>
-              &nbsp;&nbsp;<a href="user.jsp"><font color="#009933"><b>Add Messages</b></font></a></h3>
-            <h3><br>
-              &nbsp;&nbsp;<a href="add.jsp"><font color="#009933"><b>Add Photos</b></font></a></h3>
-            <h3><br>
-              &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
-              LOGOUT</strong></font></a> </h3>-->
-              
+ 
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="friends.jsp">Friends</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="frd2.jsp">Friends Request</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="all_posts.jsp">Posts</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <form name="s" action="search2.jsp">
+                    <table>
+                        <tr>
+                            <td>Search
+                                <input style="display: block;padding-left: 5px;color: black;" type="text" name="v" size="14" placeholder="Search friends">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
               </td>
 	 
 	 <td width="497">
@@ -148,7 +149,7 @@ else{
 
 <tr>
 
-<td><img src="friends1.jsp?<%=s%>" height="125" width="125"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#666666" size="3"><b><%=s1%></b></font> <a href="friends2.jsp?<%=s%>"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFCC00">View 
+<td><img src="friends1.jsp?uid=<%=s%>" height="125" width="125"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#666666" size="3"><b><%=s1%></b></font> <a href="friends2.jsp?<%=s%>"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFCC00">View 
                   Details</font> </b></a> </td>
               </tr>
 

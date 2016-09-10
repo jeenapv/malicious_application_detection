@@ -10,10 +10,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link href="styles.css" rel="stylesheet" type="text/css" media="screen" />
-		
-		
 		<!-- Begin JavaScript -->
-
 		<script type="text/javascript" src="lib/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="lib/jquery.tools.js"></script>
     	<script type="text/javascript" src="lib/jquery.custom.js"></script>
@@ -87,18 +84,33 @@
               Photos</font></a> </a></p>
           <p>&nbsp; </p>
 
-<form name="s1" action="add1.jsp" onClick="return validation()">
-<table bgcolor="#666666" height="150" width="150">
-<tr><td></td><td><textarea rows="5" cols="50" placeholder="Say something about this...." name="msg"></textarea></td></tr>
-<tr><td></td><td><input type="file" name="msg1"></td></tr>
-<tr><td></td>
-        <td> 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="submit" type="submit" value="  post  ">
-        </td>
-      </tr>
-     </table></form>
+          <form name="s1" action="add1.jsp" onClick="return validation()" enctype="multipart/form-data" method="post">
+              <table bgcolor="#666666" height="150" width="150">
+                  <tr>
+                      <td>    
+                      </td>
+                      <td>
+                          <textarea rows="5" cols="50" placeholder="Say something about this...." name="message">
+                          </textarea>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>    
+                      </td>
+                      <td>
+                          <input type="file" name="msg1">
+                      </td>
+                  </tr>
+                  <tr><td></td>
+                      <td> 
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input name="submit" type="submit" value="  post  ">
+                      </td>
+                  </tr>
+              </table>
+          </form>
 </td></tr></table>
                   <div style="clear: both"></div>
               </div>

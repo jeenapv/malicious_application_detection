@@ -71,21 +71,30 @@
                <table width="774"><tr><td width="362">
             <p><img src="user2.jsp" width="135" height="155"> </p>
             
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="friends.jsp">Friends</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="frd2.jsp">Friends Request</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="all_posts.jsp">Posts</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <form name="s" action="search2.jsp">
+                    <table>
+                        <tr>
+                            <td>Search
+                                <input style="display: block;padding-left: 5px;color: black;" type="text" name="v" size="14" placeholder="Search friends">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
             
-            <p>&nbsp;</p>
-            <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2"  color="#FFCC00"><i> 
-              <%=email%> </i></font></p>
-            <p>&nbsp; </p>
-            <form name="s" action="search2.jsp">
- <table><tr>
-                  <td><font color="#33CCFF" face="Times New Roman, Times, serif" size="4"><i><b> 
-                    Search</b></i></font> 
-                    <input type="text" name="v" size="14" placeholder="Search friends"></td></tr></table></form>
-            <p><br>
-              &nbsp;&nbsp;<a href="friends.jsp"><font color="#00CC66"><b><font size="2">Friends</font></b></font></a></p>
-            <p><br>
-              &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b><font size="2" face="Times New Roman, Times, serif">Friends 
-              Request</font></b></font></a> </p>
             <!--<p><br>
               <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></p>
             <p><br>

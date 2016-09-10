@@ -428,6 +428,68 @@ a.loading-send:hover {
 	text-decoration:none;
 }
 
+.go-to-login-button {
+    width: 170px;
+    background: #05272b;
+    font-size: 27px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 17px;
+    cursor: pointer;
+}
 
+.incorrect-login-main {
+        padding-top: 100px;
+    background-color: #042326;
+    height: 100%;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+}
+
+.incorrect-login-log-again-button {
+        text-decoration: none;
+    color: white;
+    background-color: red;
+    width: 120px;
+    display: block;
+    height: 30px;
+    line-height: 29px;
+    border-radius: 11px;
+}
+
+.fb_activation_submit_button {
+        text-decoration: none;
+    width: 100%;
+    height: 200%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.home_page_user_name {
+    font-size: 25px;
+    color: beige;
+    display: block;
+}
+
+.home_page_sub_menu {
+            width: 90%;
+    height: auto;
+    background-color: rgba(4, 38, 42, 0.8);
+    line-height: 35px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255, 213, 213, 0.35);
+}
+
+.home_page_sub_menu_a {
+    text-decoration: none;
+    color: white;
+}
 
 

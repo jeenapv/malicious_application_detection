@@ -77,19 +77,33 @@ String b=(String)session.getAttribute("b");
        
 	  <p><img src="user2.jsp" width="135" height="155"> </p>
           <!--  <p><img src="images/defaultusr.png" width="135" height="155"></p>-->
-            <p>&nbsp; </p>
-            <p><font color="#00CC66" size="3"><b>Welcome:</b></font>&nbsp;<font  color="#FFCC00" face="Times New Roman, Times, serif" size="3.5"><i><%=b%></i></font></h2> &nbsp;</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-            <form name="s" action="search2.jsp">
- <table><tr><td><p>&nbsp;</p>
-                    <p><font color="#33CCFF" face="Times New Roman, Times, serif" size="4"><i><b>Search</b></i></font> 
-                      <input type="text" name="v" size="14" placeholder="Search friends">
-                    </p></td></tr></table></form>
-            <p><br>
-              &nbsp;&nbsp;<a href="friends.jsp"><font color="#00CC66"><b>Friends</b></font></a></p>
-            <p><br>
-              &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends 
-              Request</b></font></a></p>
+            <p>&nbsp; </p>            
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="friends.jsp">Friends</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="frd2.jsp">Friends Request</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="all_posts.jsp">Posts</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <form name="s" action="search2.jsp">
+                    <table>
+                        <tr>
+                            <td>Search
+                                <input style="display: block;padding-left: 5px;color: black;" type="text" name="v" size="14" placeholder="Search friends">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
+            
+            
             <!--<p> <br>
               <font color="#CC3366">&nbsp;&nbsp;<b>FAVOURITES</b></font></p>
             <p><br>

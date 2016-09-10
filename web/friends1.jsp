@@ -1,80 +1,74 @@
 <%@ page import="java.sql.*"%>
-
+<%@include file="db.jsp" %>
 <%@ page import="java.io.*"%>
 
 <% Blob image = null;
 
-Connection con = null;
+    byte[] imgData = null;
+    String uid = request.getParameter("uid");
+    if(uid==null) {
+        uid = "1";
+    }
 
-byte[ ] imgData = null ;
+    ResultSet rs = null;
 
-Statement stmt = null;
 
-ResultSet rs = null;
-String uid=(String)session.getAttribute("uid");
+    try {
 
-try {
+        rs = stmt.executeQuery("select photo from login where id='" + uid + "' ");
 
-Class.forName("com.mysql.jdbc.Driver");
+        while (rs.next()) {
 
-con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
+            image = rs.getBlob(1);
 
-stmt = con.createStatement();
+            imgData = image.getBytes(1, (int) image.length());
 
-rs = stmt.executeQuery("select photo from login where id='"+uid+"' ");
-
-while(rs.next()) {
-
-image = rs.getBlob(1);
-
-imgData = image.getBytes(1,(int)image.length());
-
-} /*else {
-
-out.println("Display Blob Example");
-
-out.println("image not found for given image");
-
-return;
-
-}
-*/
+        } /*else {
+        
+        out.println("Display Blob Example");
+        
+        out.println("image not found for given image");
+        
+        return;
+        
+        }
+         */
 // display the image
 
-response.setContentType("image/gif");
+        response.setContentType("image/gif");
 
-OutputStream o = response.getOutputStream();
+        OutputStream o = response.getOutputStream();
 
-o.write(imgData);
+        o.write(imgData);
 
-o.flush();
+        o.flush();
 
-o.close();
+        o.close();
 
-} catch (Exception e) {
+    } catch (Exception e) {
 
-out.println("Unable To Display image");
+        out.println("Unable To Display image");
 
-out.println("Image Display Error=" + e.getMessage());
+        out.println("Image Display Error=" + e.getMessage());
 
-return;
+        return;
 
-} finally {
+    } finally {
 
-try {
+        try {
 
 
 
-stmt.close();
+            stmt.close();
 
-con.close();
+            con.close();
 
-} catch (SQLException e) {
+        } catch (SQLException e) {
 
-e.printStackTrace();
+            e.printStackTrace();
 
-}
+        }
 
-}
+    }
 
 %> 

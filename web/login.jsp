@@ -80,12 +80,12 @@
           <tr> 
             <font color="#FFFFFF" size="+1" face="Times New Roman, Times, serif"><i><b> 
            Email
-              </b></i></font> <br><input class="form-control" type="text" name="email" size="14">
+              </b></i></font> <br><input class="form-control" type="email" name="email" size="14" required>
 			  </tr>
         <tr>
             <font color="#FFFFFF" size="+1" face="Times New Roman, Times, serif"><i><b> 
             password</b></i></font> 
-			  <br> <input type="password" class="form-control" name="pass" size="14">
+			  <br> <input type="password" class="form-control" name="pass" size="14" required>
     
           </tr>
          

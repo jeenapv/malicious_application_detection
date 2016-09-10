@@ -1,5 +1,6 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
+<%@ page import="org.apache.commons.io.FileUtils"%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 <%@include file="db.jsp" %>
 <html>
@@ -11,54 +12,57 @@
     <body>
 
         <%
-            String name = null, email = null;
-            FileInputStream fis;
-            String a = request.getParameter("name");
+            
+            String name = request.getParameter("name");
             session.setAttribute("name", name);
-            String b = request.getParameter("email");
+            String email = request.getParameter("email");
             session.setAttribute("email", email);
 
-            String b1 = request.getParameter("remail");
-            session.setAttribute("remail", b1);
-            String c = request.getParameter("password");
-            String c1 = request.getParameter("log");
-            String e = request.getParameter("mobile");
-            String e1 = request.getParameter("log1");
-            String f = request.getParameter("file");
+            String remail = request.getParameter("remail");
+            session.setAttribute("remail", remail);
+            String password = request.getParameter("password");
+            String c1 = "Facebook";
+            String mobile = request.getParameter("mobile");
+            String gender = request.getParameter("gender");
 
-            String j = request.getParameter("dob");
-            String z = "C:\\Users\\manoj\\Documents\\NetBeansProjects\\malicious_application_detection\\web\\images\\gallery\\";
-            z = z+f;
-            int aaa = (int) (Math.random() * 100);
-            int bbb = aaa * 5;
-            File image = new File(z);
-
+            String dob = request.getParameter("dob");
+            
             java.util.Date now = new java.util.Date();
 
-            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(j);
-            String a2 = new SimpleDateFormat("yyyy-MM-dd").format(date);
+            Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dob);
+            String dateCorrected = new SimpleDateFormat("yyyy-MM-dd").format(date);
             PreparedStatement ps = null;
-
+            
+            FileInputStream fis;
+            File defaultImage = new File("D:\\fileUploads\\default.png");
+            fis = new FileInputStream(defaultImage);
+            
             ResultSet rs = null;
 
             try {
-                ps = con.prepareStatement("insert into login(id,name,email,remail,password,log,mobile,log1,photo,birthday) values('" + aaa + "',?,?,?,?,?,?,?,?,?)");
-                ps.setString(1, a);
-                ps.setString(2, b);
-                ps.setString(3, b1);
-                ps.setString(4, c);
+                ps = con.prepareStatement("insert into login(name"
+                        + ",email,"
+                        + "remail,"
+                        + "password,"
+                        + "log,"
+                        + "mobile,"
+                        + "log1,"
+                        + "birthday,"
+                        + "photo) "
+                        + "values(?,?,?,?,?,?,?,?,?)");
+                ps.setString(1, name);
+                ps.setString(2, email);
+                ps.setString(3, remail);
+                ps.setString(4, password);
                 ps.setString(5, c1);
-                ps.setString(6, e);
-                ps.setString(7, e1);
-                fis = new FileInputStream(image);
-                ps.setBinaryStream(8, (InputStream) fis, (int) (image.length()));
-
-
-                ps.setString(9, a2);
+                ps.setString(6, mobile);
+                ps.setString(7, gender);
+                ps.setString(8, dob);
+                ps.setBinaryStream(9, (InputStream) fis, (int) (defaultImage.length()));
 
                 ps.executeUpdate();
 
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("registration_success.jsp");
             } catch (Exception r) {
                 out.println(r.getMessage());
             }

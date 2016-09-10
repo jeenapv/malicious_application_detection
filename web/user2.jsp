@@ -1,25 +1,17 @@
 <%@ page import="java.sql.*"%>
-
+<%@include file="db.jsp" %>
 <%@ page import="java.io.*"%>
 
 <% Blob image = null;
 String email=(String)session.getAttribute("emailid");
 String pass=(String)session.getAttribute("password");
 
-Connection con = null;
-
 byte[ ] imgData = null ;
-
-Statement stmt = null;
 
 ResultSet rs = null;
 String uid=(String)session.getAttribute("uid");
 
 try {
-
-Class.forName("com.mysql.jdbc.Driver");
-
-con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
 
 stmt = con.createStatement();
 

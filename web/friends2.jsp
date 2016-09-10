@@ -1,4 +1,5 @@
 <%@ page import="java.io.*"%>
+<%@include file="db.jsp" %>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 
 
@@ -77,27 +78,31 @@
 	%>
 	
 	  <p><img src="user2.jsp" width="135" height="155"> </p>
-      <p>&nbsp;</p>
-      <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2" color="#FFCC00"><i><%=email%></i></font> </p>
- <form name="s" action="search2.jsp">
- <p>&nbsp;</p><table><tr><td><font color="#33CCFF" face="Times New Roman, Times, serif" size="4"><i><b>
- Search</b></i></font>
- <input type="text" name="v" size="14" placeholder="Search friends"></td></tr></table></form>
-          <h3><br>
-            &nbsp;&nbsp;<a href="friends.jsp"><font  color="#CC9900"><b>Friends</b></font></a></h3>
-          <h3><br>
-            &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends Request</b></font></a> 
-          </h3>
+      
+          <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="friends.jsp">Friends</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="frd2.jsp">Friends Request</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="all_posts.jsp">Posts</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <form name="s" action="search2.jsp">
+                    <table>
+                        <tr>
+                            <td>Search
+                                <input style="display: block;padding-left: 5px;color: black;" type="text" name="v" size="14" placeholder="Search friends">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
           
-      <h3><br>
-        
-      <h3><br>
-        
-      <h3><br>
-        
-      <h3><br>
-        
-      <h3><br>
         &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
         LOGOUT</strong></font></a> </h3></td>
 	 
@@ -115,13 +120,10 @@ String ii=request.getQueryString();
 String a=(String)session.getAttribute("a");
 try {
 
-Class.forName("com.mysql.jdbc.Driver");
 
-Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/facebook","root","");
+PreparedStatement stmtment = con.prepareStatement("select name,email,log1,mobile from login where id='"+i+"' AND log='"+a+"'");
 
-PreparedStatement stmt = con.prepareStatement("select name,email,log1,mobile from login where id='"+i+"' AND log='"+a+"'");
-
-ResultSet rs = stmt.executeQuery();
+ResultSet rs = stmtment.executeQuery();
 
 while(rs.next()) {
 String name=rs.getString(1);
@@ -131,7 +133,7 @@ String name3=rs.getString(4);
 %>
 <tr>
           <td><font color="#000000"><b><font color="#FF6600" size="3">Profile photo:</font></b></font></td>
-          <td><img src="friends1.jsp?<%=ii%>" height="124" width="201"></td>
+          <td><img src="friends1.jsp?uid=<%=ii%>" height="124" width="201"></td>
 </tr>
 <tr>
 <tr>

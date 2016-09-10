@@ -78,28 +78,30 @@ String a1=(String)session.getAttribute("b");
 %><div id="main">
               <img src="user2.jsp" width="153" height="169"> <br>
             </p>
-            <p>&nbsp; </p>
-            <p><font color="#00CC66"><b>Welcome:</b></font>&nbsp;<font  color="#FFCC00" face="Times New Roman, Times, serif" size="3.5"><i><%=a1%></i></font></h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-              &nbsp;&nbsp;&nbsp; </p>
-            <form name="s" action="search2.jsp">
- <table><tr><td><p>&nbsp;</p>
-                    <p><font color="#33CCFF" face="Times New Roman, Times, serif" size="4"><i><b>Search</b></i></font> 
-                      <input type="text" name="v" size="14" placeholder="Search friends">
-                    </p></td></tr></table></form>
-            <p><br>
-              &nbsp;&nbsp;<a href="friends.jsp"><font color="#00CC66"><b>Friends</b></font></a></p>
-            <p><br>
-              &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends 
-              Request</b></font></a></p>
-            <p> <br>
-              
-            <p><br>
-              
-            <p><br>
-              
-            <p><br>
-              
-            <p><br>
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="friends.jsp">Friends</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="frd2.jsp">Friends Request</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <a class="home_page_sub_menu_a" href="all_posts.jsp">Posts</a>
+            </div>
+                
+            <div class="home_page_sub_menu">
+                <form name="s" action="search2.jsp">
+                    <table>
+                        <tr>
+                            <td>Search
+                                <input style="display: block;padding-left: 5px;color: black;" type="text" name="v" size="14" placeholder="Search friends">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            
               &nbsp;&nbsp;<a href="logout.jsp"><font color="#FF3300" face="Times New Roman, Times, serif"><strong> 
               LOGOUT</strong></font></a> </p></td>
 	
@@ -124,7 +126,7 @@ session.setAttribute("id",name1);
                 <td width="170"><font color="#666666" size="3"><b><font color="#66CC00">Profile 
                   Photo:</font></b></font></td>
                  
-                <td width="216"><img src="search.jsp?<%=name%>" height="125" width="125" /></td>
+                <td width="216"><img src="friends1.jsp?uid=<%=name1%>"  height="125" width="125" /></td>
               </tr>
               <tr> 
                 <td><font color="#666666" size="3"><font color="#00CC66"><b>Name:</b></font></font></td>

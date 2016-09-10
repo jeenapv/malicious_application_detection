@@ -106,8 +106,10 @@ String b=(String)session.getAttribute("b");
 String id=(String)session.getAttribute("sid");
 try {
 
-
-PreparedStatement stmt8 = con.prepareStatement("select name,email,mobile,log1,id from login where id='"+id+"'");
+String sqlQry = "select name,email,mobile,log1,id from login where id='"+id+"'";
+System.out.println("---------------------------");
+System.out.println(sqlQry);
+PreparedStatement stmt8 = con.prepareStatement(sqlQry);
 
 ResultSet rs = stmt8.executeQuery();
 

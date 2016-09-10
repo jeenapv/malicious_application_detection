@@ -82,7 +82,7 @@
                 <tr> 
                   <td ><font face="Times New Roman"  size="+1"  color=""><strong>Your 
                     Email</strong></font></td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input class="form-control" type="text" name="email" placeholder="Enter your Email id?" required/></td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input class="form-control" type="email" name="email" placeholder="Enter your Email id?" required/></td>
                 </tr>
 				
 				
@@ -90,7 +90,7 @@
 				<tr> 
                   <td ><font face="Times New Roman"  size="+1"  color=""><strong>Your Reference 
                     Email</strong></font></td>
-                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" class="form-control" name="remail" placeholder="Enter your Email id?" required/></td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; <input type="email" class="form-control" name="remail" placeholder="Enter your Email id?" required/></td>
                 </tr>
 				
 				
@@ -103,37 +103,28 @@
                     <input type="password" name="password" class="form-control" placeholder="Enter your password?" required/>
                   </td>
                 </tr>
-                <tr> 
-                  <td ><font face="Times New Roman"  size="+1"  color=""><strong>Your 
-                    Domain</strong></font></td>
-                  <td>&nbsp;&nbsp;&nbsp; 
-                    <select class="form-control" name="log">
-                      <option value="0">select Domain:</option>
-                      <option value="Facebook">Facebook</option>
-                      <option value="Admin">Admin</option>
-                    </select></td>
-                </tr>
                 <tr> </tr>
                 <tr> 
                   <td ><font face="Times New Roman"  size="+1"  color=""><strong>Mobile</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input type="text" name="mobile" class="form-control" placeholder="Enter your mobile numbers?" required/></td>
+                      <input type="number" max="9999999999" name="mobile" class="form-control" placeholder="Enter your mobile numbers?" required/></td>
                 </tr>
                 <tr> 
                   <td ><font face="Times New Roman"  size="+1"  color=""><strong>I 
                     Am</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <select class="form-control" name="log1" required>
+                    <select class="form-control" name="gender" required>
                     
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
                     </select></td>
                 </tr>
-                <tr> 
+<!--                <tr> 
                   <td ><font face="Times New Roman"  size="+1"  color=""><strong>Photo</strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
-                    <input class="form-control" type="file" size="8" name="file" required/></td>
-                </tr>
+                    <input class="form-control" type="file" size="8" name="file" required/>
+                  </td>
+                </tr>-->
                 <tr> 
                   <td ><font face="Times New Roman"  size="+1"  color="#66FF00"><strong><font color="">Birthday</font></strong></font></td>
                   <td>&nbsp;&nbsp;&nbsp; 
