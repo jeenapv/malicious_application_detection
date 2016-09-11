@@ -110,159 +110,183 @@
                                         </form>
                                     </div>
 
-                            <td width="629"><table><tr><td>
-                                            <p>&nbsp;</p>
-                                            <p><a href="post_code_emailsend.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="post_code_emailsend1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>  
+                                    <td width="629"><table><tr><td>
+                                                    <p>&nbsp;</p>
+                                                    <p><a href="post_code_emailsend.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <a href="post_code_emailsend1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>  
 
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="graph1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>  
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <a href="graph1.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2"></font></a>  
 
-                                            </p>
-                                            <br>
-
-                                                <table> 
+                                                    </p>
                                                     <br>
-                                                        <%
 
-                                                            String id = (String) session.getAttribute("uid");
-                                                            String q, r, s;
-                                                            String a = (String) session.getAttribute("a");
-                                                            try {
+                                                        <table> 
+                                                            <br>
+                                                                <%
 
-                                                                PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1 from message where to_uid=" + id + " or id1=" + id + "   order by id1 desc");
+                                                                    String id = (String) session.getAttribute("uid");
+                                                                    String q, r, s;
+                                                                    String a = (String) session.getAttribute("a");
+                                                                    try {
 
-                                                                ResultSet rs1 = stmt1.executeQuery();
+                                                                        PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1 from message where to_uid=" + id + " or id1=" + id + "   order by id desc");
 
-                                                                while (rs1.next()) {
-                                                                    q = rs1.getString(1);
-                                                                    r = rs1.getString(2);
-                                                                    s = rs1.getString(3);
-                                                                    //kekes
+                                                                        ResultSet rs1 = stmt1.executeQuery();
+
+                                                                        while (rs1.next()) {
+                                                                            q = rs1.getString(1);
+                                                                            r = rs1.getString(2);
+                                                                            s = rs1.getString(3);
+                                                                            //kekes
 %>
-                                                        <tr><td><img src="friends1.jsp?uid=<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
-                                                                <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#006699"><b>a post --></font> <font   color="#CC33FF"><%=r%>"</font>"</b> </td>
-                                                        </tr>
+                                                                <tr class="each-post-in-all-post">
+                                                                    <td>
+                                                                        <img src="friends1.jsp?uid=<%=s%>" height="55" width="55">
+                                                                    </td>
+                                                                    <td>
+                                                                        <font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b>
+                                                                        </font>
+                                                                        <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        </font>
+                                                                        <font color="#006699"><b>a post -->
+                                                                        </font> 
+                                                                        <%
 
-                                                        <%
-                                                                }
+                                                                            if (r.endsWith("jpg") || r.endsWith("png") || r.endsWith("gif")) {
+                                                                        %>
+                                                                        <img src="<%=r%>" height="200" width="200"></img>
+                                                                        <%                                                                                    }
+                                                                                                                                                       else {
+                                                                        %>
+                                                                        <font   color="#CC33FF"><%=r%>
+                                                                        </font>
+                                                                        <%
+                                                                                                                                                       }
+                                                                        %>
+                                                                        
+                                                                    </td>
+                                                                </tr>
 
-                                                            } catch (Exception e3) {
-                                                                out.println(e3.getMessage());
+                                                                <%
+                                                                        }
 
-                                                            }
+                                                                    } catch (Exception e3) {
+                                                                        out.println(e3.getMessage());
 
-                                                            try {
+                                                                    }
 
-                                                                PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1,video from videos where log='" + a + "'");
+                                                                    try {
 
-                                                                ResultSet rs1 = stmt1.executeQuery();
+                                                                        PreparedStatement stmt1 = con.prepareStatement("select name,msg,id1,video from videos where log='" + a + "'");
 
-                                                                while (rs1.next()) {
-                                                                    q = rs1.getString(1);
-                                                                    r = rs1.getString(2);
-                                                                    s = rs1.getString(3);
-                                                                    String video = rs1.getString(4);
-                                                        %>
-                                                        <tr><td><img src="friends1.jsp?uid=<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
-                                                                <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font>
-                                                                <font color="#006699"><b>a message --></font> <td> <video width="400" height="320"  > <source src="documents/<%=video%>" type="video/ogg"> 
-                                                                            <source src="documents/<%=video%>" type="video/mp4"> <source src="documents/<%=video%>" type="video/webm"> 
-                                                                                    <object data="documents/<%=video%>" width="320" height="240">
-                                                                                        <embed src="documents/<%=video%>" width="320" height="240"></embed> 
-                                                                                        <embed width="320" height="240" src="documents/<%=video%>"></embed> 
-                                                                                    </object>
-                                                                                    </video></td></b> </td>
-                                                                                    </tr>
+                                                                        ResultSet rs1 = stmt1.executeQuery();
 
-                                                                                    <%
-                                                                                            }
+                                                                        while (rs1.next()) {
+                                                                            q = rs1.getString(1);
+                                                                            r = rs1.getString(2);
+                                                                            s = rs1.getString(3);
+                                                                            String video = rs1.getString(4);
+                                                                %>
+                                                                <tr><td><img src="friends1.jsp?uid=<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
+                                                                        <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font>
+                                                                        <font color="#006699"><b>a message --></font> <td> <video width="400" height="320"  > <source src="documents/<%=video%>" type="video/ogg"> 
+                                                                                    <source src="documents/<%=video%>" type="video/mp4"> <source src="documents/<%=video%>" type="video/webm"> 
+                                                                                            <object data="documents/<%=video%>" width="320" height="240">
+                                                                                                <embed src="documents/<%=video%>" width="320" height="240"></embed> 
+                                                                                                <embed width="320" height="240" src="documents/<%=video%>"></embed> 
+                                                                                            </object>
+                                                                                            </video></td></b> </td>
+                                                                                            </tr>
 
-                                                                                        } catch (Exception e3) {
-                                                                                            out.println(e3.getMessage());
+                                                                                            <%
+                                                                                                    }
 
-                                                                                        }
+                                                                                                } catch (Exception e3) {
+                                                                                                    out.println(e3.getMessage());
 
-
-
-
-
-
-
-                                                                                    %>
-                                                                                    <%
-
-                                                                                        try {
-
-
-                                                                                            PreparedStatement stmt1 = con.prepareStatement("select application_shared.*,login.name from  application_shared left join login on login.id=shared_userid where to_userid=" + id + " or shared_userid=" + id + "   ");
-
-                                                                                            ResultSet rs1 = stmt1.executeQuery();
-
-                                                                                            while (rs1.next()) {
-                                                                                                q = rs1.getString("name");
-                                                                                                r = rs1.getString("app_name");
-                                                                                                s = rs1.getString("shared_userid");
-                                                                                    %>
-                                                                                    <tr><td><img src="friends1.jsp?uid=<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
-                                                                                            <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#006699"><b>Application --></font><img style="width:56px" src="images/app-icon.png"></img> <font   color="#CC33FF"><%=r%></font></b> </td>
-                                                                                    </tr>
-
-                                                                                    <%
-                                                                                            }
-
-                                                                                        } catch (Exception e3) {
-                                                                                            out.println(e3.getMessage());
-
-                                                                                        }
-                                                                                    %>
-                                                                                    </table>
-
-                                                                                    </td>
-
-
-                                                                                    <td>&nbsp; </td>
-
-                                                                                    </tr></table>
+                                                                                                }
 
 
 
-                                                                                    </td>
 
 
-                                                                                    </tr></table>
-
-                                                                                    <div style="clear: both"></div>
-                                                                                    </div>
 
 
-                                                                                    <div id="footer_box">
-                                                                                        <div id="footer_box_top"></div>
-                                                                                        <div id="footer_box_bg">
+                                                                                            %>
+                                                                                            <%
 
-                                                                                            <p>&nbsp;</p>
-                                                                                            <p>&nbsp;</p>
+                                                                                                try {
 
 
-                                                                                            <p><font size="+2" color="#FFCC00"><b>
+                                                                                                    PreparedStatement stmt1 = con.prepareStatement("select application_shared.*,login.name from  application_shared left join login on login.id=shared_userid where to_userid=" + id + " or shared_userid=" + id + "   order by application_shared.id desc");
 
-                                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                                                        &nbsp;&nbsp;
-                                                                                                        <marquee scrollamount="5" width="40">&lt;&lt;&lt;&lt;&lt;</marquee>
-                                                                                                        Detecting Malicious Facebook Applications<marquee scrollamount="5" direction="right" width="40">&gt;&gt;&gt;&gt;&gt;</marquee>
+                                                                                                    ResultSet rs1 = stmt1.executeQuery();
 
-                                                                                                    </b></font> 
-                                                                                            </p>
+                                                                                                    while (rs1.next()) {
+                                                                                                        q = rs1.getString("name");
+                                                                                                        r = rs1.getString("app_name");
+                                                                                                        s = rs1.getString("shared_userid");
+                                                                                            %>
+                                                                                            <tr class="each-post-in-all-post" ><td><img src="friends1.jsp?uid=<%=s%>" height="55" width="55"></td><td><font color="#006699"><b>&nbsp;&nbsp;&nbsp;&nbsp;<%=q%>&nbsp;&nbsp;&nbsp;&nbsp;</b></font>
+                                                                                                    <font  color="#FFCC00">shared  &nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#006699"><b>Application --></font><img style="width:56px" src="images/app-icon.png"></img> <font   color="#CC33FF"><%=r%></font></b> </td>
+                                                                                            </tr>
+
+                                                                                            <%
+                                                                                                    }
+
+                                                                                                } catch (Exception e3) {
+                                                                                                    out.println(e3.getMessage());
+
+                                                                                                }
+                                                                                            %>
+                                                                                            </table>
+
+                                                                                            </td>
+
+
+                                                                                            <td>&nbsp; </td>
+
+                                                                                            </tr></table>
+
+
+
+                                                                                            </td>
+
+
+                                                                                            </tr></table>
+
                                                                                             <div style="clear: both"></div>
-                                                                                        </div>
-                                                                                        <div id="footer_box_bot"></div>
-                                                                                    </div>
-                                                                                    </div>
-                                                                                    <div id="content_bot"></div>
-                                                                                    </div>
-                                                                                    <div id="footer">
-                                                                                        <div class="red_hr"></div>
-                                                                                    </div>
-                                                                                    </body>
-                                                                                    </html>
+                                                                                            </div>
+
+
+                                                                                            <div id="footer_box">
+                                                                                                <div id="footer_box_top"></div>
+                                                                                                <div id="footer_box_bg">
+
+                                                                                                    <p>&nbsp;</p>
+                                                                                                    <p>&nbsp;</p>
+
+
+                                                                                                    <p><font size="+2" color="#FFCC00"><b>
+
+                                                                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                                &nbsp;&nbsp;
+                                                                                                                <marquee scrollamount="5" width="40">&lt;&lt;&lt;&lt;&lt;</marquee>
+                                                                                                                Detecting Malicious Facebook Applications<marquee scrollamount="5" direction="right" width="40">&gt;&gt;&gt;&gt;&gt;</marquee>
+
+                                                                                                            </b></font> 
+                                                                                                    </p>
+                                                                                                    <div style="clear: both"></div>
+                                                                                                </div>
+                                                                                                <div id="footer_box_bot"></div>
+                                                                                            </div>
+                                                                                            </div>
+                                                                                            <div id="content_bot"></div>
+                                                                                            </div>
+                                                                                            <div id="footer">
+                                                                                                <div class="red_hr"></div>
+                                                                                            </div>
+                                                                                            </body>
+                                                                                            </html>
