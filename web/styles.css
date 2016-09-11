@@ -492,4 +492,16 @@ a.loading-send:hover {
     color: white;
 }
 
+.post-image-button {
+    background-color: #3b5997;
+    height: 35px;
+    width: 100px;
+    border: none;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    line-height: 35px;
+}
+
 

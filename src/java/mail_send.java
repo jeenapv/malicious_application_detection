@@ -66,7 +66,7 @@ private static void sendFromGMail(String from, String pass, String[] to, String 
 
 public static void main(String[]args) {
     String from = "manoj.mohanan23@gmail.com";
-        String pass = "9388651882";
+        String pass = "123123";
         String[] to = {"krishh_mea@yahoo.in"}; // list of recipient email addresses
         String subject = "File sending test";
         String body = "Welcome to JavaMail!";

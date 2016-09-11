@@ -66,18 +66,29 @@
 				
                <table width="774"><tr><td width="225">
       <p><img src="user2.jsp" width="135" height="155"> </p>
-            <p><font size="+1" color="#CC0099"><b>Welcome:</b></font>&nbsp;<font size="2" color="#330099"><i>
-              <%=email%>
-              </i></font> </p>
-            <form name="s" action="search2.jsp">
- <table><tr>
-                  <td><font color="#33CCFF" face="Times New Roman, Times, serif" size="4"><i><b> 
-                    Search</b></i></font> 
-                    <input type="text" name="v" size="14" placeholder="Search friends"></td></tr></table></form>
- <br>
-  &nbsp;&nbsp;<a href="friends.jsp"><font color="#00CC66"><b>Friends</b></font></a><br>
-  &nbsp;&nbsp;<a href="frd2.jsp"><font color="#00CC66"><b>Friends Request</b></font></a>
-  <br>
+      <div class="home_page_sub_menu">
+          <a class="home_page_sub_menu_a" href="friends.jsp">Friends</a>
+      </div>
+          
+      <div class="home_page_sub_menu">
+          <a class="home_page_sub_menu_a" href="frd2.jsp">Friends Request</a>
+      </div>
+          
+      <div class="home_page_sub_menu">
+          <a class="home_page_sub_menu_a" href="all_posts.jsp">Posts</a>
+      </div>
+          
+      <div class="home_page_sub_menu">
+          <form name="s" action="search2.jsp">
+              <table>
+                  <tr>
+                      <td>Search
+                          <input style="display: block;padding-left: 5px;color: black;" type="text" name="v" size="14" placeholder="Search friends">
+                      </td>
+                  </tr>
+              </table>
+          </form>
+      </div>
 <font color="#CC3366">&nbsp;&nbsp;<b></b></font><br>
 	  </td>
           <td width="537"><p><a href="add.jsp"><font color="#33CC33" face="Times New Roman, Times, serif" size="+2">Add 
@@ -90,15 +101,14 @@
                       <td>    
                       </td>
                       <td>
-                          <textarea rows="5" cols="50" placeholder="Say something about this...." name="message">
-                          </textarea>
+                          <textarea rows="5" cols="50" placeholder="Say something about this...." name="message" required></textarea>
                       </td>
                   </tr>
                   <tr>
                       <td>    
                       </td>
                       <td>
-                          <input type="file" name="msg1">
+                          <input type="file" name="msg1" required>
                       </td>
                   </tr>
                   <tr><td></td>
@@ -106,7 +116,7 @@
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <input name="submit" type="submit" value="  post  ">
+                          <input class="post-image-button" name="submit" type="submit" value="  post  ">
                       </td>
                   </tr>
               </table>

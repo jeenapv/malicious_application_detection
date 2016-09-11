@@ -25,7 +25,6 @@
     <div id="wrap">
         <div id="logo">
             <font size="6"    color="#000000"><b>Detecting Malicious Facebook Applications</b></font></h1>
-
         </div>
 
         <div id="content_top"></div>
@@ -56,8 +55,6 @@
                     } catch (NumberFormatException e) {
                         dif = 0;
                     }
-
-
                     //String qry = "udpate table set total_time = total_time + " + dif;
                     //String dif1 =Integer.toString(dif);
                     difference = difference + coma + dif;
