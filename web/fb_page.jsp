@@ -164,7 +164,7 @@
                                                         </tr>
 
 
-                                                        <tr><td><font  color="#99FF33" style="display: block"><b><%=n%></b></font></td><td><a href="friends6.jsp?<%=p%>"><img src="friends3.jsp?<%=p%>" height="205" width="205"></a></td></tr>
+                                                        <tr><td><font  color="#99FF33" style="display: block"><b><%=n%></b></font></td><td><a href="friends3.jsp?<%=p%>"><img src="friends3.jsp?<%=p%>" height="205" width="205"></a></td></tr>
 
                                                         <%
                                                                 }
