@@ -1,6 +1,6 @@
 <%@ page import="java.io.*"%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
-<%@include file="db.jsp" %>
+<%@include file="db1.jsp" %>
 <%
     String log = request.getParameter("log");
     String email = request.getParameter("email");
@@ -14,15 +14,24 @@
     int count;
     int count1;
     if ((log.equals("Admin")) & (email.equals("admin@gmail.com")) & (pass.equals("admin123"))) {
+        session.setAttribute("uid", "1");
         response.sendRedirect("adminview.jsp");
     }
     try {
-        String stttt = "select id,name,email,remail,password from login where email='" + email + "' AND password='" + pass + "' ";
+        String stttt = "select id,name,email,remail,password,blocked_status from login where email='" + email + "' AND password='" + pass + "' ";
         System.out.println(stttt);
         rs = stmt.executeQuery(stttt);
 
         if (rs.next()) {
-            id = rs.getString(1);
+           String status = rs.getString(6);
+           
+               if(status.equals("1")){
+                   
+                               out.println("<body style='background-color: turquoise' ><center><h2>Sorry You are blocked by admin</h2></center></body>");
+
+               }
+               else{
+                   id = rs.getString(1);
             String emailid = rs.getString(3);
 
             String name = rs.getString(2);
@@ -50,6 +59,8 @@
             //session.setAttribute("w",w);		
             response.sendRedirect("email_send.jsp");
             //response.sendRedirect("fb_activation.jsp?success");
+               }
+            
         } else {
             out.println("<div class='incorrect-login-main'>");
             out.println("<link href='styles.css' rel='stylesheet' type='text/css' media='screen'>");
@@ -75,5 +86,7 @@
     } catch (Exception e1) {
         out.println(e1.getMessage());
     }
+
+
 
 %>

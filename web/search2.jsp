@@ -134,11 +134,13 @@ session.setAttribute("id",name1);
                   <h2><b><%=name%></b></h2>
                   <p>&nbsp;</p></td>
               </tr>
+                  <%if( !name1.equals(session.getAttribute("uid"))  ){%>
               <tr> 
                 <td height="37"></td>
                 <td><a href="acc2.jsp?<%=name1%>"><font color="#0066CC"><b><font size="3">Send 
                   Friend Request</font></b></font></a></td>
               </tr>
+                  <%}%>
               <tr> 
                 <td></td>
                 <td><a href="frd7.jsp?<%=name1%>"><font color="#0066CC"><b><font size="3">View 

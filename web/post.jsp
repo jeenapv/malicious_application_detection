@@ -1,4 +1,3 @@
-
 <%@ page import="java.io.*"%>
 <%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" import = "java.util.Date,java.text.SimpleDateFormat,java.text.ParseException" %>
 <%@include file="db.jsp" %>
@@ -20,7 +19,7 @@ PreparedStatement ps = null;
 ResultSet rs = null;
 boolean flag= true;
 
-rs = stmt.executeQuery("select * from blacklisted_domains where domains like '%"+msg+"%' ");
+rs = stmt.executeQuery("SELECT * FROM blacklisted_domains WHERE '"+msg+"' LIKE CONCAT('%' ,domains, '%') ");
 while(rs.next()){
     String domains = rs.getString(2);
     flag = false;
@@ -28,7 +27,7 @@ while(rs.next()){
 }
 
 if(flag == false){
-    %><h1><center>This Message May Malicious</center></h1><br/><h2><center>Want you to post this?</center><h2><center><a href="repost_message.jsp">post<center></a><br/><a href="fb_page.jsp">return</a></center><%
+%><body style="background-color: turquoise;color: red;"><h1><center>This Message May Malicious</center></h1><br/><h2><center>Want you to post this?</center><h2><center><a href="repost_message.jsp">post<center></a><br/><a href="fb_page.jsp">return</a></center></body> <%
 }
 
 
@@ -43,7 +42,7 @@ else {
 
     ps.executeUpdate();
 
-    response.sendRedirect("fb_page.jsp?sucess");
+    response.sendRedirect("all_posts.jsp");
     }
     catch(Exception e1)
     {

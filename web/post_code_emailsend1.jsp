@@ -35,8 +35,8 @@
     String messageText = "<b>" + emailid + "</b><br>Activation Code:" + c + "<br>Message:" + oo + "";
     System.out.println("************ System.out.println(messageText); ************");
     System.out.println(messageText);
-//session.setAttribute("userid",userid);
-//session.setAttribute("password",c);
+    //session.setAttribute("userid",userid);
+    //session.setAttribute("password",c);
 
     boolean sessionDebug = true;
     try {

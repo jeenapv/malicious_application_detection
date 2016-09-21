@@ -120,7 +120,7 @@ session.setAttribute("iid",name4);
 %>
               <tr> 
                 <td width="176"><h1><font size="3">Profile photo:</font></h1></td>
-                <td width="165"><img src="friends1.jsp?<%=name4%>" height="125" width="125" /></td>
+                <td width="165"><img src="friends1.jsp?uid=<%=name4%>" height="125" width="125" /></td>
               </tr>
               <tr> </tr>
               <tr> 
@@ -147,11 +147,13 @@ session.setAttribute("iid",name4);
                     <%=name3%>
                   </h2></td>
               </tr>
-              <tr>
+               <%if( !name4.equals(session.getAttribute("uid"))  ){%>
+                  <tr>
                 <td></td>
                 <td><h2> <a href="acc2.jsp?<%=name4%>"><font  color="#CC0066" size="3"><b>Send 
                     Friend Request</b></font></a></h2></td>
               </tr>
+                    <%}%>
               <%
 }
 %>

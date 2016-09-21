@@ -47,13 +47,14 @@
                               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Application
                               <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li><a href="application.jsp">Add Application</a></li>
+                                <li><a href="application.jsp?id=2">Add Application</a></li>
                                 <li><a href="view_applications.jsp">View Applications</a></li>
                                 
                               </ul>
                             </li>
                             <li><a href="view.jsp">Users</a></li>
-
+                             <li><a href="admin_graph.jsp">Report</a></li>  
+                              <li><a href="login.jsp">Logout</a></li>
                         </ul>
                             <%}%>
                         </div>

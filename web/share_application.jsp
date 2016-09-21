@@ -274,7 +274,7 @@ while(rs.next()){
 }
 else{
 %>
-  <h2 style="color:red;text-align:center">App is <%=appStatus%>% Trustable</h2><%
+<h2 style="color:red;text-align:center">App is <span  style="color: blue;"><%=appStatus%>%</span> Trustable</h2><%
 }
 
 }

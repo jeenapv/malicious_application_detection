@@ -13,8 +13,5 @@
      stmttt = con.createStatement();
       
  
-String uid1 = (String)session.getAttribute("uid");
-if(uid1 == null){
-    response.sendRedirect("login.jsp");
-}
+
 %> 

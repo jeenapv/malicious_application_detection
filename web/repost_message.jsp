@@ -30,18 +30,19 @@ boolean flag= true;
             System.out.print(countVal+"coubtttttt");
             if(countVal >= 3) {
                 %>
-                <h2 style="font-color:red"><center>Sorry! You Are Blocked</center></h2>    
+                <body style="background-color: turquoise;color: red;"><h2 style="font-color:red"><center>Sorry! You Are Blocked</center></h2><marquee  direction="up" behavior="alternate"><h2 style= "font-color:red"><center>You can't post any malicious data to this Person</center></h2></marquee></body>    
                 
                 <%
             } else {
              stmt.execute("insert into message(id1,name,msg,to_uid) values("+uid+",'"+name+"','"+message+"', "+to_uid+")");
      
              stmtt.execute ("update malicious_afected set afected_count = afected_count+1 where to_userid="+to_uid+" and user_id="+uid+"  " );   
-             response.sendRedirect("fb_page.jsp?sucess");
+             response.sendRedirect("all_posts.jsp?sucess");
             }
      }else{
+         stmt.execute("insert into message(id1,name,msg,to_uid) values("+uid+",'"+name+"','"+message+"', "+to_uid+")");
          stmtt.execute ("INSERT INTO `malicious_afected` (`user_id`, `to_userid`, `afected_count`) VALUES ("+uid+", "+to_uid+", '1')" );
-          response.sendRedirect("fb_page.jsp?sucess");
+           response.sendRedirect("all_posts.jsp?sucess");
      }
        
      

@@ -31,6 +31,7 @@ long millis = System.currentTimeMillis();
             String qry = "update login set total_time = total_time+"+dif+" "  ;
             //out.println(qry); 
             stmtt.executeUpdate("update login set total_time = total_time+"+dif+" where id="+uid+" ");
+            request.getSession().invalidate();
 %>
 		<style>
 		

@@ -35,7 +35,7 @@
                 
                 
     <div id="header"> </div>
-    <h2 style="color:red;text-align:center">Attacking Graph</h2>
+    <h2 style="color:red">Application Attacking Graph</h2>
 		<div style="width: 50%">
 			<canvas id="canvas" height="450" width="600"></canvas>
 		</div>
@@ -49,14 +49,17 @@ String difference = "";
 String coma = "";
 String uid = (String)session.getAttribute("uid");
 
-rs = stmt.executeQuery("select * from malicious_afected where to_userid = '"+uid+"' ");
+rs = stmt.executeQuery("select * from application_shared where to_userid = '"+uid+"' ");
+
+
 while(rs.next()){
     
-    rss = stmtt.executeQuery("select name from login where id='"+rs.getString("user_id") +"' ");
+    rss = stmtt.executeQuery("select name from login where id='"+rs.getString("shared_userid") +"' ");
     while(rss.next()){
-    user_id = user_id + coma + "'" +rss.getString("name") +"'" ;
+    String attack_data = rss.getString("name")+"["+rs.getString("app_name")+"]";
+    user_id = user_id + coma + "'"+ attack_data +"'" ;
     }
-    double dif = Long.parseLong(rs.getString("afected_count"));
+    double dif = Long.parseLong(rs.getString("count"));
     
     //String qry = "udpate table set total_time = total_time + " + dif;
     //String dif1 =Integer.toString(dif);
@@ -91,7 +94,6 @@ while(rs.next()){
 	}
 
 	</script>
-       
                     <div id="footer_box_bot"></div>
                 </div>
             </div>
